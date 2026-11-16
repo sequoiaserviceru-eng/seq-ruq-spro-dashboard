@@ -1102,10 +1102,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     host.innerHTML = '';
     var R=54, C=2*Math.PI*R, done=15, plan=70, pct=Math.min(1,done/plan);
     var svg = el('svg',{width:'132',height:'132',viewBox:'0 0 132 132',role:'img','aria-label':'Выполнение плана ноября: 15 из 70 целевых, 21%'});
-    svg.appendChild(el('circle',{cx:66,cy:66,r:R,fill:'none',stroke:cssv('--border-strong'),'stroke-width':'9',opacity:'.75'}));
-    /* отметка контрольной точки 15.11 — 34 ЦЛ из 70 */
-    var cpAng=(-90+360*(34/70))*Math.PI/180;
-    svg.appendChild(el('line',{x1:66+Math.cos(cpAng)*45,y1:66+Math.sin(cpAng)*45,x2:66+Math.cos(cpAng)*66,y2:66+Math.sin(cpAng)*66,stroke:cssv('--accent'),'stroke-width':3,'stroke-linecap':'round'}));
+    svg.appendChild(el('circle',{cx:66,cy:66,r:R,fill:'none',stroke:cssv('--border-strong'),'stroke-width':'9',opacity:'.55'}));
     var arc = el('circle',{cx:66,cy:66,r:R,fill:'none',stroke:cssv('--primary'),'stroke-width':'11','stroke-linecap':'round',
       'stroke-dasharray':C,'stroke-dashoffset':C,'transform':'rotate(-90 66 66)'});
     svg.appendChild(arc);
