@@ -1,482 +1,605 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="light">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="yandex" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-09T10:02Z"><meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-16T12:00Z"><meta http-equiv="cache-control" content="no-cache">
 <title>Отчёт 2 – 8 ноября 2026 — интерактивная версия</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap">
+<meta name="color-scheme" content="light">
 <style>
+/* ============================================================
+   Sequoia Briefing — light-only interface, November 2026
+   Restrained Apple-style editorial system for the weekly report.
+   ============================================================ */
+
 :root{
-  --bg:#F8FAFC; --surface:#FFFFFF; --surface-2:#F1F5F9; --surface-3:#E8EEF6;
-  --border:#E2E8F0; --border-strong:#CBD5E1;
-  --text:#0F172A; --text-2:#475569; --text-3:#64748B;
-  --primary:#1E40AF; --primary-2:#3B82F6; --primary-soft:#E8EFFE;
-  --accent:#D97706; --accent-soft:#FEF3E2;
-  --pos:#15803D; --pos-soft:#E8F5EC; --neg:#B91C1C; --neg-soft:#FDECEC;
-  --seq:#1F7A4D; --seq-bg:#E8F1EC; --ruq:#1767B0; --ruq-bg:#E5F2FC; --spr:#8B6A12; --spr-bg:#FBF1D6;
-  --shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px -12px rgba(15,23,42,.18);
-  --r:10px; --r-sm:8px;
-  --sans:"Fira Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --mono:"Fira Code",ui-monospace,"Cascadia Code",Consolas,monospace;
-  --maxw:1440px; --ease-out:cubic-bezier(.23,1,.32,1);
+  color-scheme: light;
+  --bg:#F5F5F7;
+  --surface:#FFFFFF;
+  --surface-2:#F5F5F7;
+  --surface-3:#EBEBED;
+  --border:rgba(0,0,0,.075);
+  --border-strong:rgba(0,0,0,.16);
+  --text:#1D1D1F;
+  --text-2:#515154;
+  --text-3:#86868B;
+  --primary:#1D6B4F;
+  --primary-2:#2E8B67;
+  --primary-soft:#EAF3EE;
+  --link:#1D6B4F;
+  --accent:#A86500;
+  --accent-soft:#FBF3E6;
+  --pos:#1D7A45;
+  --pos-soft:#E9F5EE;
+  --neg:#B3261E;
+  --neg-soft:#FBEDEC;
+  --seq:#1D6B4F;
+  --seq-bg:#EFF6F2;
+  --ruq:#1F5FA8;
+  --ruq-bg:#EEF4FB;
+  --spr:#8A5A00;
+  --spr-bg:#FBF5E8;
+  --ch-src:#6E6E73;
+  --ch-mail:#A1A1A6;
+  --shadow:0 1px 2px rgba(0,0,0,.035),0 16px 40px -28px rgba(0,0,0,.2);
+  --r:22px;
+  --r-sm:12px;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Segoe UI Variable","Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,"Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;
+  --maxw:1280px;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
 }
-html[data-theme="dark"]{
-  --bg:#0B1220; --surface:#121A2B; --surface-2:#1A2436; --surface-3:#223049;
-  --border:#263349; --border-strong:#33425C;
-  --text:#E8EDF5; --text-2:#A9B6C9; --text-3:#7C8BA1;
-  --primary:#60A5FA; --primary-2:#93C5FD; --primary-soft:#16233D;
-  --accent:#F5A524; --accent-soft:#2A2011;
-  --pos:#4ADE80; --pos-soft:#122419; --neg:#F87171; --neg-soft:#2A1616;
-  --seq:#4ADE80; --seq-bg:#12241A; --ruq:#60A5FA; --ruq-bg:#11203A; --spr:#FBBF24; --spr-bg:#241E10;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
-}
+
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
-  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  margin:0;
+  background:
+    radial-gradient(1000px 520px at 50% -12%, #FFFFFF 0%, rgba(255,255,255,0) 72%),
+    var(--bg);
+  background-repeat:no-repeat;
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-optical-sizing:auto;
 }
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px 72px}
-.num,.mono{font-family:var(--mono);font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
-h1,h2,h3{margin:0;letter-spacing:-.015em;line-height:1.2}
-h1{font-size:clamp(26px,3.4vw,38px);font-weight:700}
-h2{font-size:20px;font-weight:600}
+::selection{background:rgba(29,107,79,.16)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px 88px}
+.num,.mono{font-family:var(--sans);font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.15;font-weight:600}
+h1{font-size:clamp(40px,5.4vw,68px);line-height:1.02;letter-spacing:-.04em;text-wrap:balance}
+h2{font-size:clamp(26px,2.6vw,32px);letter-spacing:-.025em}
 p{margin:0}
-a{color:var(--primary)}
-:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:6px}
+section{scroll-margin-top:78px}
 
 /* ---------- nav ---------- */
 .nav{
-  position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
-  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:50;
+  background:rgba(245,245,247,.72);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(0,0,0,.06);
 }
-.nav-in{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;gap:20px}
-.brand{font-weight:700;font-size:15px;letter-spacing:-.02em;white-space:nowrap}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .nav{background:rgba(245,245,247,.96)}
+}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:56px;display:flex;align-items:center;gap:18px}
+.brand{font-size:13px;font-weight:600;letter-spacing:-.01em;white-space:nowrap}
 .brand span{color:var(--text-3);font-weight:400}
 .nav-links{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
 .nav-links::-webkit-scrollbar{display:none}
 .nav-links a{
-  padding:8px 12px;border-radius:var(--r-sm);font-size:14px;color:var(--text-2);
-  text-decoration:none;white-space:nowrap;transition:background .18s,color .18s;cursor:pointer
+  padding:6px 11px;border-radius:9px;font-size:13px;color:var(--text-2);
+  text-decoration:none;white-space:nowrap;transition:background .18s var(--ease-out),color .18s var(--ease-out);cursor:pointer
 }
-.nav-links a:hover{background:var(--surface-2);color:var(--text)}
-.nav-links a.active{background:var(--primary-soft);color:var(--primary);font-weight:600}
-.icon-btn{
-  width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--border);
-  background:var(--surface);color:var(--text-2);border-radius:var(--r-sm);cursor:pointer;
-  transition:background .18s,color .18s,border-color .18s;flex:0 0 auto
-}
-.icon-btn:hover{background:var(--surface-2);color:var(--text);border-color:var(--border-strong)}
-.icon-btn:active{transform:translateY(1px)}
-.icon-btn svg{width:20px;height:20px}
-html[data-theme="dark"] .icon-sun{display:block}
-html[data-theme="dark"] .icon-moon{display:none}
-.icon-sun{display:none}
+.nav-links a:hover{background:rgba(0,0,0,.045);color:var(--text)}
+.nav-links a.active{background:rgba(0,0,0,.06);color:var(--text);font-weight:600}
 
 /* ---------- период-пикер ---------- */
-.yper{position:relative;flex:0 0 auto;margin-left:6px}
-.yper-btn{display:inline-flex;align-items:center;gap:10px;min-height:38px;padding:6px 12px 6px 14px;border-radius:100px;border:1px solid var(--border);background:var(--surface);cursor:pointer;font-family:var(--sans);color:var(--text-2);transition:border-color .18s,background .18s,box-shadow .18s}
-.yper-btn:hover{background:var(--surface-2);color:var(--text);border-color:var(--border-strong)}
-.yper-btn[aria-expanded="true"]{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
-.yper-lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3)}
-.yper-sep{width:1px;height:16px;background:var(--border);flex:0 0 auto}
-.yper-ix{font-family:var(--mono);font-weight:600;font-size:12.5px;color:var(--primary)}
-.yper-dates{font-size:13px;color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap}
-.yper-btn>svg{width:12px;height:12px;color:var(--text-3);flex:0 0 auto;transition:transform .18s}
+.yper{position:relative;flex:0 0 auto;margin-left:4px}
+.yper-btn{
+  display:inline-flex;align-items:center;gap:9px;min-height:34px;padding:5px 11px 5px 13px;
+  border-radius:100px;border:1px solid rgba(0,0,0,.08);background:rgba(255,255,255,.72);
+  cursor:pointer;font-family:var(--sans);color:var(--text-2);
+  transition:border-color .18s var(--ease-out),background .18s var(--ease-out),box-shadow .18s var(--ease-out)
+}
+.yper-btn:hover{background:var(--surface);color:var(--text);border-color:rgba(0,0,0,.13)}
+.yper-btn[aria-expanded="true"]{background:var(--surface);border-color:var(--primary);box-shadow:0 0 0 3px rgba(29,107,79,.12)}
+.yper-lab{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);font-weight:600}
+.yper-sep{width:1px;height:14px;background:var(--border-strong);flex:0 0 auto;opacity:.5}
+.yper-ix{font-family:var(--mono);font-weight:600;font-size:11.5px;color:var(--primary)}
+.yper-dates{font-size:12.5px;color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:500}
+.yper-btn>svg{width:11px;height:11px;color:var(--text-3);flex:0 0 auto;transition:transform .2s var(--ease-out)}
 .yper-btn[aria-expanded="true"]>svg{transform:rotate(180deg)}
-.yper-pop{position:absolute;top:calc(100% + 10px);left:0;z-index:40;width:332px;background:var(--surface);border:1px solid var(--border-strong);border-radius:12px;box-shadow:var(--shadow);padding:12px;display:none}
-.yper-pop.open{display:block}
+.yper-pop{
+  position:absolute;top:calc(100% + 10px);left:0;z-index:60;width:336px;
+  background:rgba(255,255,255,.92);-webkit-backdrop-filter:saturate(180%) blur(24px);backdrop-filter:saturate(180%) blur(24px);
+  border:1px solid rgba(0,0,0,.08);border-radius:18px;
+  box-shadow:0 24px 70px -24px rgba(0,0,0,.28),0 2px 8px rgba(0,0,0,.06);
+  padding:12px;display:none
+}
+.yper-pop.open{display:block;animation:pop-in .22s var(--ease-out)}
+@keyframes pop-in{from{opacity:0;transform:translateY(-6px) scale(.985)}to{opacity:1;transform:none}}
 .yper-search{position:relative;margin-bottom:10px}
-.yper-search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--text-3);pointer-events:none}
-.yper-search input{width:100%;min-height:36px;padding:8px 10px 8px 33px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-family:var(--sans);font-size:13.5px}
+.yper-search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--text-3);pointer-events:none}
+.yper-search input{
+  width:100%;min-height:36px;padding:8px 10px 8px 33px;border-radius:10px;border:1px solid transparent;
+  background:var(--surface-2);color:var(--text);font-family:var(--sans);font-size:13.5px;transition:background .16s,border-color .16s
+}
 .yper-search input::placeholder{color:var(--text-3)}
-.yper-search input:focus{border-color:var(--primary);outline:none;box-shadow:0 0 0 3px var(--primary-soft)}
-.yper-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
-.yper-tabs button{min-height:34px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-2);font-family:var(--sans);font-size:13.5px;cursor:pointer;transition:background .15s,color .15s}
-.yper-tabs button:hover{background:var(--surface-2);color:var(--text)}
-.yper-tabs button[aria-selected="true"]{background:var(--primary-soft);border-color:color-mix(in srgb,var(--primary) 35%,transparent);color:var(--primary);font-weight:600}
-/* стандартные scrollbar-width/color убраны: в Chromium 121+ они отключают ::-webkit-scrollbar-стили и рисуют нативную полосу со стрелками */
+.yper-search input:focus{background:var(--surface);border-color:var(--primary);outline:none;box-shadow:0 0 0 3px rgba(29,107,79,.12)}
+.yper-tabs{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:10px;background:var(--surface-3);padding:2px;border-radius:10px}
+.yper-tabs button{
+  min-height:32px;border-radius:8px;border:0;background:transparent;color:var(--text-2);
+  font-family:var(--sans);font-size:13px;cursor:pointer;transition:background .15s var(--ease-out),color .15s,box-shadow .15s
+}
+.yper-tabs button:hover{color:var(--text)}
+.yper-tabs button[aria-selected="true"]{background:var(--surface);color:var(--text);font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.04)}
 .yper-list{max-height:330px;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;gap:2px;scrollbar-gutter:stable}
 @supports (scrollbar-width:thin) and (not (selector(::-webkit-scrollbar))){
-  .yper-list{scrollbar-width:thin;scrollbar-color:var(--border-strong) var(--surface-2)}
+  .yper-list{scrollbar-width:thin;scrollbar-color:var(--border-strong) transparent}
 }
 .yper-list::-webkit-scrollbar{width:10px}
-.yper-list::-webkit-scrollbar-track{background:var(--surface-2);border-radius:6px;margin:2px}
-.yper-list::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:6px;border:2px solid var(--surface-2)}
+.yper-list::-webkit-scrollbar-track{background:transparent;border-radius:6px;margin:2px}
+.yper-list::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:6px;border:3px solid var(--surface)}
 .yper-list::-webkit-scrollbar-thumb:hover{background:var(--text-3)}
-html[data-theme="dark"] .yper-list::-webkit-scrollbar-thumb{background:#3E4F6C}
-html[data-theme="dark"] .yper-list::-webkit-scrollbar-thumb:hover{background:#5C6B80}
-.yper-year{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin:2px 0 4px 10px}
-.yper-opt{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;min-height:40px;padding:6px 10px;border:0;border-radius:8px;background:none;cursor:pointer;text-align:left;font-family:var(--sans)}
-.yper-opt:hover{background:var(--surface-2)}
+.yper-year{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin:4px 0 4px 10px;font-weight:600}
+.yper-opt{
+  display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;min-height:40px;
+  padding:6px 10px;border:0;border-radius:9px;background:none;cursor:pointer;text-align:left;font-family:var(--sans);
+  transition:background .14s
+}
+.yper-opt:hover{background:rgba(0,0,0,.045)}
 .yper-opt[aria-selected="true"]{background:var(--primary-soft)}
 .yper-opt[aria-selected="true"] .yper-oix,.yper-opt[aria-selected="true"] .yper-odates{color:var(--primary)}
-.yper-oix{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--text-3)}
-.yper-odates{font-size:13.5px;color:var(--text);font-variant-numeric:tabular-nums}
-.yper-chip{font-family:var(--mono);font-size:11.5px;font-weight:500;background:var(--surface-2);color:var(--text-2);padding:3px 9px;border-radius:100px;white-space:nowrap}
+.yper-oix{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--text-3)}
+.yper-odates{font-size:13.5px;color:var(--text);font-variant-numeric:tabular-nums;font-weight:500}
+.yper-chip{font-size:11px;font-weight:500;background:rgba(0,0,0,.055);color:var(--text-2);padding:3px 9px;border-radius:100px;white-space:nowrap;font-variant-numeric:tabular-nums}
 .yper-opt[aria-selected="true"] .yper-chip{background:var(--surface);color:var(--primary)}
-.yper-note{font-size:12px;color:var(--text-3);margin:8px 2px 0;line-height:1.45}
+.yper-note{font-size:11.5px;color:var(--text-3);margin:9px 2px 0;line-height:1.45}
 .yper-empty{padding:16px 10px;color:var(--text-3);font-size:13px}
-.yper-fast{display:flex;gap:6px;align-items:center;margin-top:8px;padding-top:10px;border-top:1px solid var(--border)}
-.yper-fast .fl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
-.yper-fast button{min-height:28px;padding:3px 11px;border-radius:100px;border:1px solid var(--border);background:var(--surface);color:var(--text-2);font-size:12.5px;cursor:pointer;font-family:var(--sans);transition:background .15s,color .15s}
-.yper-fast button:hover{background:var(--surface-2);color:var(--text)}
+.yper-fast{display:flex;gap:6px;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.yper-fast .fl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);font-weight:600}
+.yper-fast button{
+  min-height:27px;padding:3px 11px;border-radius:100px;border:1px solid var(--border);background:var(--surface);
+  color:var(--text-2);font-size:12px;cursor:pointer;font-family:var(--sans);transition:background .15s,color .15s,border-color .15s
+}
+.yper-fast button:hover{background:var(--surface-2);color:var(--text);border-color:var(--border-strong)}
 .yper-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .kpi .delta[hidden]{display:none!important}
 
 /* ---------- header ---------- */
-.head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center;padding:44px 0 34px;border-bottom:1px solid var(--border)}
-.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px}
-.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.tag{
-  font-family:var(--mono);font-size:12px;padding:5px 10px;border-radius:100px;
-  border:1px solid var(--border);background:var(--surface);color:var(--text-2)
+.head{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:end;
+  padding:84px 0 60px;border-bottom:1px solid var(--border)
 }
+.lede{max-width:56ch;font-size:17px;line-height:1.5;color:var(--text-2);margin-top:22px;letter-spacing:-.005em}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:7px 0;margin-top:28px}
+.tag{font-size:12.5px;color:var(--text-3);padding:0;border:0;background:none;line-height:1.5}
 .tag b{color:var(--text);font-weight:600}
-.ring-box{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:210px}
-.ring-cap{font-size:13px;color:var(--text-2);text-align:center;max-width:280px}
+.tag+.tag::before{
+  content:"";display:inline-block;width:3px;height:3px;border-radius:50%;
+  background:var(--border-strong);margin:0 11px;vertical-align:middle
+}
+.ring-box{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:200px;padding-bottom:4px}
+.ring-cap{font-size:12.5px;color:var(--text-2);text-align:center;max-width:250px;line-height:1.5}
 
 /* ---------- sections ---------- */
-section{padding:36px 0;border-bottom:1px solid var(--border)}
+section{padding:64px 0;border-bottom:1px solid var(--border)}
 section:last-of-type{border-bottom:0}
-.sec-head{margin-bottom:20px}
-.sec-head .sub{color:var(--text-2);font-size:14px;margin-top:8px;max-width:78ch}
+#kpi{padding-top:56px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 40px;margin-bottom:28px}
+.sec-head .sub{color:var(--text-2);font-size:14px;margin:0;max-width:70ch;line-height:1.5}
 
-/* ---------- kpi ---------- */
-.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px 18px;box-shadow:var(--shadow)}
-.kpi-lab{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-3);margin-bottom:12px;min-height:32px;display:flex;align-items:flex-start}
-.kpi-val{font-family:var(--mono);font-size:clamp(24px,2.5vw,30px);font-weight:600;line-height:1.1;letter-spacing:-.02em}
-.kpi-foot{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+/* ---------- kpi band ---------- */
+.kpis{
+  display:grid;grid-template-columns:1.18fr repeat(4,minmax(0,1fr));gap:1px;
+  background:var(--border);border:1px solid var(--border);border-radius:var(--r);
+  box-shadow:var(--shadow);overflow:hidden
+}
+.kpi{background:var(--surface);padding:26px 24px 24px;display:flex;flex-direction:column;min-width:0}
+.kpi-lab{
+  font-size:11px;line-height:1.35;letter-spacing:.065em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:26px;min-height:30px;display:flex;align-items:flex-start;font-weight:600
+}
+.kpi-val{
+  font-size:clamp(32px,3vw,38px);font-weight:600;line-height:1.02;letter-spacing:-.035em;
+  font-variant-numeric:tabular-nums;margin-top:auto;white-space:nowrap
+}
+.kpis>.kpi:first-child .kpi-val{font-size:clamp(46px,4.6vw,58px);letter-spacing:-.045em}
+.kpi-foot{display:flex;align-items:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+.kpi-note{font-size:12px;color:var(--text-3);line-height:1.4}
+.kpi-sub{font-size:12px;color:var(--text-3);margin-top:9px;line-height:1.5}
+.kpi-sub b{color:var(--text-2);font-weight:600}
 .delta{
-  display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:12.5px;font-weight:600;
-  padding:3px 9px;border-radius:100px;white-space:nowrap
+  display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;
+  padding:3px 8px;border-radius:100px;white-space:nowrap;font-variant-numeric:tabular-nums
 }
 .delta.up{background:var(--pos-soft);color:var(--pos)}
 .delta.down{background:var(--neg-soft);color:var(--neg)}
-.delta.flat{background:var(--surface-2);color:var(--text-2)}
-.kpi-note{font-size:12.5px;color:var(--text-3)}
-.kpi-sub{font-size:11.5px;color:var(--text-3);margin-top:6px;line-height:1.45}
-.kpi-sub b{color:var(--text-2);font-weight:600}
-
-/* ---------- коридор плана/факта ---------- */
-.cor-block .note{font-size:12.5px}
-.cor-row{padding:12px 0;border-top:1px solid var(--border)}
-.cor-row:first-of-type{border-top:0}
-.cor-lab{font-size:13px;color:var(--text-2);margin-bottom:8px}
-.cor-track{position:relative;height:26px;border-radius:6px;background:var(--surface-2);overflow:hidden}
-.cor-band{position:absolute;top:0;bottom:0;background:color-mix(in srgb,var(--primary) 14%,transparent)}
-.cor-band::before{content:'';position:absolute;inset:0;border:1px solid color-mix(in srgb,var(--primary) 30%,transparent);border-radius:6px}
-.cor-plan{position:absolute;top:0;bottom:0;width:2px;background:var(--accent)}
-.cor-fact{position:absolute;top:50%;width:10px;height:10px;margin-top:-5px;margin-left:-5px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 2px var(--surface)}
-.cor-verdict{margin-top:7px;font-family:var(--mono);font-size:12.5px;font-weight:600}
-.cor-verdict.pos{color:var(--pos)}
-.cor-verdict.neg{color:var(--neg)}
-
-/* второй ряд: разрез по каналам и направлениям.
-   Асимметричная сетка (3 узких плитки + 1 широкая) — чтобы не повторять layout ряда выше */
-.kpis+.kpis{margin-top:14px}
-.kpis--split{grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.75fr)}
-.kpis--split .kpi-foot{flex-direction:column;align-items:flex-start;gap:7px}
-.kpi-unit{font-size:.5em;font-weight:500;letter-spacing:0;color:var(--text-3);margin-left:2px}
-.meter{height:5px;border-radius:3px;background:var(--surface-2);overflow:hidden;margin:12px 0 0}
-.meter>i{display:block;height:100%;border-radius:3px;background:var(--primary);transition:width .6s cubic-bezier(.16,1,.3,1)}
-.kpi-share{
-  font-family:var(--mono);font-size:12.5px;font-weight:600;padding:3px 9px;border-radius:100px;
-  background:var(--surface-2);color:var(--text-2);white-space:nowrap
-}
-.dirs{display:grid;grid-template-columns:auto minmax(0,1fr) 28px 54px;gap:11px 14px;align-items:center}
-.dirs .bar-track{margin-top:0;height:7px}
-.dirs .pill{font-size:11px;padding:2px 9px}
-.dir-v{font-family:var(--mono);font-size:14px;font-weight:600;text-align:right}
-.dir-n{font-family:var(--mono);font-size:12px;color:var(--text-3);text-align:right}
-
-/* каналы — нейтральная шкала, чтобы не путать с цветами проектов */
-  :root{--ch-src:#64748B;--ch-mail:#A3AFC0}
-  html[data-theme="dark"]{--ch-src:#8593A8;--ch-mail:#5C6B80}
-
-  /* week-over-week small multiples */
-  .sm{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;align-items:center;padding:13px 0;border-top:1px solid var(--border)}
-  .sm:first-child{border-top:0;padding-top:2px}
-  .sm-k{display:flex;flex-direction:column;gap:5px}
-  .sm-kt{font-size:13.5px;color:var(--text-2)}
-  .sm-delta{font-family:var(--mono);font-size:11.5px;font-weight:600;padding:2px 7px;border-radius:100px;align-self:flex-start}
-  .sm-delta.up{background:var(--pos-soft);color:var(--pos)}
-  .sm-delta.down{background:var(--neg-soft);color:var(--neg)}
-  .sm-bars{display:flex;flex-direction:column;gap:6px;min-width:0}
-  .sm-line{display:grid;grid-template-columns:minmax(60px,1fr) 62px 66px;gap:10px;align-items:center}
-  .sm-track{height:9px;border-radius:3px;background:var(--surface-2);overflow:hidden}
-  .sm-fill{height:100%;border-radius:3px;width:0;transition:width .6s cubic-bezier(.16,1,.3,1)}
-  .sm-fill.prev{background:var(--text-3);opacity:.55}
-  .sm-fill.cur{background:var(--primary)}
-  .sm-lb{font-size:11.5px;color:var(--text-3);font-family:var(--mono);white-space:nowrap}
-  .sm-val{font-size:12.5px;font-weight:600;text-align:right;color:var(--text-2)}
-  .bar-track.na{background:repeating-linear-gradient(135deg,var(--surface-2) 0 5px,transparent 5px 10px);border:1px dashed var(--border-strong)}
-  @media (max-width:760px){.sm{grid-template-columns:1fr;gap:8px}.sm-line{grid-template-columns:minmax(40px,1fr) 58px 62px}}
+.delta.flat{background:var(--surface-3);color:var(--text-2)}
+.kpis+.kpis{margin-top:16px}
+.kpis--split{grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.7fr)}
+.kpis--split .kpi-val{font-size:clamp(34px,3.2vw,42px)}
+.kpis--split .kpi-foot{flex-direction:column;align-items:flex-start;gap:7px;margin-top:14px}
+.kpi-unit{font-size:.42em;font-weight:500;letter-spacing:0;color:var(--text-3);margin-left:3px}
+.meter{height:4px;border-radius:100px;background:var(--surface-3);overflow:hidden;margin:14px 0 0}
+.meter>i{display:block;height:100%;border-radius:100px;background:var(--primary);transition:width .7s var(--ease-out)}
+.kpi-share{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:100px;background:var(--surface-2);color:var(--text-2);white-space:nowrap}
+.dirs{display:grid;grid-template-columns:auto minmax(0,1fr) 28px 48px;gap:12px 14px;align-items:center}
+.dirs .bar-track{margin-top:0;height:5px}
+.dirs .pill{font-size:11px;padding:2px 8px}
+.dir-v{font-size:14px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.dir-n{font-size:11.5px;color:var(--text-3);text-align:right;font-variant-numeric:tabular-nums}
 
 /* ---------- panels / charts ---------- */
-.grid-2{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:minmax(0,1.34fr) minmax(0,1fr);gap:20px;align-items:start}
 .grid-2.even{grid-template-columns:repeat(2,minmax(0,1fr))}
-.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
-.panel-t{font-size:14.5px;font-weight:600;margin-bottom:4px}
-.panel-s{font-size:12.5px;color:var(--text-3);margin-bottom:16px}
-.chart{width:100%;display:block;overflow:visible}
-.chart text{font-family:var(--mono);font-size:11px;fill:var(--text-3)}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:26px 28px;box-shadow:none;min-width:0}
+.panel-t{font-size:16px;font-weight:600;letter-spacing:-.015em;margin-bottom:5px}
+.panel-s{font-size:12.5px;color:var(--text-3);margin-bottom:20px;line-height:1.5;max-width:82ch}
+.chart{width:100%;display:block;overflow:visible;margin-top:4px}
+.chart text{font-family:var(--sans);font-size:11px;fill:var(--text-3);font-variant-numeric:tabular-nums}
 .chart .lbl{fill:var(--text-2);font-size:11.5px}
 .chart .grid-l{stroke:var(--border);stroke-width:1}
-.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
-.legend span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--text-2)}
-.sw{width:11px;height:11px;border-radius:3px;flex:0 0 auto}
-.sw.line{height:3px;border-radius:2px;width:16px}
+.legend{display:flex;gap:8px 20px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
+.legend span{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--text-2)}
+.sw{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+.sw.line{height:2px;border-radius:2px;width:16px}
 
 /* ---------- stat list ---------- */
 .stats{display:flex;flex-direction:column}
-.stat{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px solid var(--border)}
+.stat{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-top:1px solid var(--border)}
 .stat:first-child{border-top:0;padding-top:0}
-.stat-k{font-size:13.5px;color:var(--text-2)}
-.stat-v{font-family:var(--mono);font-size:14px;font-weight:600;white-space:nowrap}
-.bar-track{height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden;margin-top:6px}
-.bar-fill{display:block;height:100%;border-radius:3px;background:var(--primary);transition:width .6s cubic-bezier(.16,1,.3,1)}
+.stat-k{font-size:13px;color:var(--text-2)}
+.stat-v{font-size:13.5px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bar-track{height:5px;border-radius:100px;background:var(--surface-3);overflow:hidden;margin-top:6px}
+.bar-fill{display:block;height:100%;border-radius:100px;background:var(--primary);transition:width .7s var(--ease-out)}
 .bar-fill.seq{background:var(--seq)}.bar-fill.ruq{background:var(--ruq)}.bar-fill.spr{background:var(--spr)}.bar-fill.x{background:var(--text-3)}
+.bar-track.na{background:transparent;border:1px dashed var(--border-strong)}
+
+/* ---------- week-over-week small multiples ---------- */
+.sm{display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;align-items:center;padding:14px 0;border-top:1px solid var(--border)}
+.sm:first-child{border-top:0;padding-top:2px}
+.sm-k{display:flex;flex-direction:column;gap:5px}
+.sm-kt{font-size:12.5px;color:var(--text-2);line-height:1.35}
+.sm-delta{font-size:11px;font-weight:600;padding:2px 7px;border-radius:100px;align-self:flex-start;font-variant-numeric:tabular-nums}
+.sm-delta.up{background:var(--pos-soft);color:var(--pos)}
+.sm-delta.down{background:var(--neg-soft);color:var(--neg)}
+.sm-bars{display:flex;flex-direction:column;gap:7px;min-width:0}
+.sm-line{display:grid;grid-template-columns:minmax(60px,1fr) 58px 64px;gap:10px;align-items:center}
+.sm-track{height:6px;border-radius:100px;background:var(--surface-3);overflow:hidden}
+.sm-fill{height:100%;border-radius:100px;width:0;transition:width .7s var(--ease-out)}
+.sm-fill.prev{background:var(--text-3);opacity:.5}
+.sm-fill.cur{background:var(--primary)}
+.sm-lb{font-size:11px;color:var(--text-3);white-space:nowrap}
+.sm-val{font-size:12px;font-weight:600;text-align:right;color:var(--text-2);font-variant-numeric:tabular-nums}
+
+/* ---------- corridor ---------- */
+.cor-block .note{font-size:12px;color:var(--text-3)}
+.cor-row{padding:13px 0;border-top:1px solid var(--border)}
+.cor-row:first-of-type{border-top:0}
+.cor-lab{font-size:12.5px;color:var(--text-2);margin-bottom:9px;line-height:1.45}
+.cor-track{position:relative;height:22px;border-radius:8px;background:var(--surface-2);overflow:hidden}
+.cor-band{position:absolute;top:0;bottom:0;background:rgba(29,107,79,.1)}
+.cor-band::before{content:'';position:absolute;inset:0;border:1px solid rgba(29,107,79,.22);border-radius:8px}
+.cor-plan{position:absolute;top:0;bottom:0;width:1.5px;background:var(--accent)}
+.cor-fact{position:absolute;top:50%;width:9px;height:9px;margin-top:-4.5px;margin-left:-4.5px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 2px var(--surface)}
+.cor-verdict{margin-top:8px;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
+.cor-verdict.pos{color:var(--pos)}
+.cor-verdict.neg{color:var(--neg)}
 
 /* ---------- filters ---------- */
-.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:14px}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:16px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
 .chip{
-  display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:7px 13px;border-radius:100px;
-  border:1px solid var(--border);background:var(--surface);color:var(--text-2);font-size:13.5px;
-  cursor:pointer;transition:background .18s,border-color .18s,color .18s;font-family:var(--sans)
+  display:inline-flex;align-items:center;gap:7px;min-height:34px;padding:6px 12px;border-radius:100px;
+  border:1px solid transparent;background:var(--surface-2);color:var(--text-2);font-size:12.5px;
+  cursor:pointer;transition:background .16s var(--ease-out),color .16s,border-color .16s;font-family:var(--sans);font-weight:500
 }
-.chip:hover{background:var(--surface-2);color:var(--text)}
-.chip:active{transform:translateY(1px)}
-.chip[aria-pressed="true"]{background:var(--text);border-color:var(--text);color:var(--bg);font-weight:600}
-.chip .cnt{font-family:var(--mono);font-size:12px;opacity:.75}
-.chip .sw{width:9px;height:9px}
-.chip[aria-pressed="true"] .sw{box-shadow:0 0 0 1.5px var(--bg)}
-.search{position:relative;min-width:250px;flex:1 1 250px;max-width:340px}
-.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--text-3);pointer-events:none}
+.chip:hover{background:var(--surface-3);color:var(--text)}
+.chip:active{transform:scale(.985)}
+.chip[aria-pressed="true"]{background:var(--text);border-color:var(--text);color:var(--surface);font-weight:600}
+.chip .cnt{font-size:11px;opacity:.7;font-variant-numeric:tabular-nums}
+.chip .sw{width:7px;height:7px}
+.chip[aria-pressed="true"] .sw{box-shadow:0 0 0 1.5px var(--surface)}
+.search{position:relative;min-width:236px;flex:1 1 236px;max-width:330px}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--text-3);pointer-events:none}
 .search input{
-  width:100%;min-height:38px;padding:9px 12px 9px 36px;border-radius:100px;
-  border:1px solid var(--border);background:var(--surface);color:var(--text);font-family:var(--sans);font-size:14px
+  width:100%;min-height:36px;padding:8px 12px 8px 35px;border-radius:100px;
+  border:1px solid transparent;background:var(--surface-2);color:var(--text);font-family:var(--sans);font-size:13.5px;
+  transition:background .16s,border-color .16s,box-shadow .16s
 }
 .search input::placeholder{color:var(--text-3)}
-.search input:focus{border-color:var(--primary);outline:none;box-shadow:0 0 0 3px var(--primary-soft)}
+.search input:focus{background:var(--surface);border-color:var(--primary);outline:none;box-shadow:0 0 0 3px rgba(29,107,79,.12)}
 
 /* ---------- table ---------- */
-.tbl-wrap{border:1px solid var(--border);border-radius:var(--r);overflow:auto;background:var(--surface);box-shadow:var(--shadow)}
-.tbl-wrap.clip{max-height:70vh}
-table{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;min-width:0;table-layout:auto}
-thead th{
-  position:sticky;top:0;z-index:2;background:var(--surface-2);text-align:left;
-  font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--text-2);
-  font-weight:600;padding:11px 14px;border-bottom:1px solid var(--border)
+.tbl-wrap{
+  border:1px solid var(--border);border-radius:18px;overflow:auto;background:var(--surface);
+  box-shadow:none;-webkit-overflow-scrolling:touch
 }
-th.sortable{cursor:pointer;user-select:none;transition:color .18s}
-th.sortable:hover{color:var(--primary)}
-th .arw{opacity:.35;margin-left:5px;font-family:var(--mono)}
+.tbl-wrap.clip{max-height:70vh}
+.tbl-wrap.is-scroll:not(.at-end){
+  -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 30px),transparent);
+  mask-image:linear-gradient(to right,#000 calc(100% - 30px),transparent)
+}
+.panel .tbl-wrap{border:0;border-radius:0;background:transparent}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;min-width:0;table-layout:auto}
+thead th{
+  position:sticky;top:0;z-index:2;background:var(--surface);text-align:left;
+  font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);
+  font-weight:600;padding:10px 14px;border-bottom:1px solid var(--border-strong);white-space:nowrap
+}
+th.sortable{cursor:pointer;user-select:none;transition:color .16s}
+th.sortable:hover{color:var(--text)}
+th .arw{opacity:.3;margin-left:4px;font-size:10px}
 th[aria-sort] .arw{opacity:1;color:var(--primary)}
-tbody td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top}
-tbody tr{transition:background .15s}
-tbody tr:hover{background:var(--surface-2)}
+tbody td{padding:13px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+tbody tr{transition:background .14s}
+tbody tr:hover{background:#FAFAFC}
 tbody tr:last-child td{border-bottom:0}
-td.d{font-family:var(--mono);color:var(--text-2);white-space:nowrap}
+td.d{font-variant-numeric:tabular-nums;color:var(--text-2);white-space:nowrap}
 td.nm{min-width:0;overflow-wrap:anywhere}
-td.nm .sub{display:block;color:var(--text-3);font-size:12.5px;margin-top:3px;line-height:1.45;overflow-wrap:anywhere}
+td.nm .sub{display:block;color:var(--text-3);font-size:12px;margin-top:4px;line-height:1.45;overflow-wrap:anywhere}
 tr.p-seq td:first-child{box-shadow:inset 3px 0 0 var(--seq)}
 tr.p-ruq td:first-child{box-shadow:inset 3px 0 0 var(--ruq)}
 tr.p-spr td:first-child{box-shadow:inset 3px 0 0 var(--spr)}
-tr.p-seq{background:var(--seq-bg)}
-tr.p-ruq{background:var(--ruq-bg)}
-tr.p-spr{background:var(--spr-bg)}
-html[data-theme="dark"] tr.p-seq:hover{background:#16301F}
-html[data-theme="dark"] tr.p-ruq:hover{background:#152740}
-html[data-theme="dark"] tr.p-spr:hover{background:#2E2611}
 .pill{
-  display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;
-  padding:3px 10px;border-radius:100px;white-space:nowrap;border:1px solid transparent
+  display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;
+  padding:3px 9px;border-radius:100px;white-space:nowrap;border:0
 }
+.pill.p-seq{color:var(--seq);background:var(--seq-bg)}
+.pill.p-ruq{color:var(--ruq);background:var(--ruq-bg)}
+.pill.p-spr{color:var(--spr);background:var(--spr-bg)}
 #leads-tbl td:last-child,#leads-tbl th:last-child{white-space:normal}
-.sum{text-align:right;font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--text-2)}
+.sum{text-align:right;font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--text);font-weight:500}
 th.sum-h{text-align:right}
 .sum .dash{color:var(--text-3)}
 .deal{color:inherit;text-decoration:none;border-bottom:1px dashed var(--border-strong)}
 @media (hover:hover) and (pointer:fine){.deal:hover{color:var(--primary);border-bottom-color:var(--primary)}}
+.copy{
+  display:inline-flex;align-items:flex-start;gap:6px;font-size:12.5px;flex-wrap:wrap;
+  background:none;border:0;padding:2px 3px;margin:-2px -3px;color:var(--text-2);cursor:pointer;
+  border-radius:5px;transition:background .15s,color .15s;text-align:left;max-width:100%;font-family:var(--sans);
+  font-variant-numeric:tabular-nums
+}
+.copy:hover{background:var(--primary-soft);color:var(--primary)}
+.copy svg{width:13px;height:13px;opacity:0;transition:opacity .15s;flex:0 0 auto}
+.copy:hover svg{opacity:.6}
+.copy.done{color:var(--pos)}
+.tbl-foot{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;margin-top:14px;font-size:12px;color:var(--text-3);line-height:1.5}
+.scroll-hint{display:none;margin:10px 0 0;font-size:12px;color:var(--text-3);line-height:1.45}
+.empty{padding:48px 20px;text-align:center;color:var(--text-3);font-size:14px}
+
 /* ---------- деньги ---------- */
-.money{margin-top:16px;padding:16px 18px 14px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
-.money-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between;margin-bottom:14px}
-.money-h b{font-size:13.5px;font-weight:600}
-.money-h span{font-size:11.5px;color:var(--text-3)}
-.mm-list{display:flex;flex-direction:column;gap:10px}
-.mm-row{display:grid;grid-template-columns:122px minmax(0,1fr) auto;gap:14px;align-items:center}
-.mm-lbl{font-size:12.5px;color:var(--text-2);white-space:nowrap}
-.mm-lbl small{display:block;font-size:10.5px;color:var(--text-3)}
-.mm-track{position:relative;height:26px;border-radius:7px;background:var(--surface-2);overflow:hidden}
-.mm-fill{position:absolute;inset:0 auto 0 0;border-radius:7px;background:var(--pos);transform-origin:left center;will-change:transform}
-.mm-fill.wait{background:repeating-linear-gradient(135deg,var(--border-strong) 0 6px,transparent 6px 12px);opacity:.55}
-.mm-val{font-family:var(--mono);font-size:13px;font-weight:600;text-align:right;white-space:nowrap;min-width:150px}
-.mm-val small{display:block;font-size:10.5px;font-weight:400;color:var(--text-3);font-family:var(--sans)}
-.mm-deals{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:9px}
+.money{margin-top:20px;padding:26px 28px 22px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface)}
+.money-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between;margin-bottom:18px}
+.money-h b{font-size:16px;font-weight:600;letter-spacing:-.015em}
+.money-h span{font-size:12px;color:var(--text-3)}
+.mm-list{display:flex;flex-direction:column;gap:12px}
+.mm-row{display:grid;grid-template-columns:112px minmax(0,1fr) auto;gap:16px;align-items:center}
+.mm-lbl{font-size:12.5px;color:var(--text-2);white-space:nowrap;font-weight:500}
+.mm-lbl small{display:block;font-size:11px;color:var(--text-3);font-weight:400;margin-top:1px}
+.mm-track{position:relative;height:28px;border-radius:8px;background:var(--surface-2);overflow:hidden}
+.mm-fill{position:absolute;inset:0 auto 0 0;border-radius:8px;background:var(--primary);transform-origin:left center;will-change:transform}
+.mm-fill.wait{background:var(--border-strong);opacity:.35}
+.mm-val{font-size:13px;font-weight:600;text-align:right;white-space:nowrap;min-width:150px;font-variant-numeric:tabular-nums}
+.mm-val small{display:block;font-size:10.5px;font-weight:400;color:var(--text-3);font-family:var(--sans);margin-top:2px}
+.mm-deals{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:10px}
 .mm-deals:empty{display:none}
 .mm-deals span{font-size:11px;color:var(--text-3);margin-right:2px}
-.mm-deal{font:inherit;font-size:11.5px;color:var(--text-2);border:1px solid var(--border);border-radius:999px;padding:3px 9px;background:var(--surface-2);cursor:pointer;transition:color .16s,border-color .16s}
-.mm-deal b{font-weight:600;color:var(--text);font-family:var(--mono);font-size:11px;margin-left:4px}
-.mm-deal:hover{color:var(--primary);border-color:var(--primary)}
+.mm-deal{font:inherit;font-size:11px;color:var(--text-2);border:1px solid var(--border);border-radius:999px;padding:3px 9px;background:var(--surface-2);cursor:pointer;transition:color .16s,border-color .16s}
+.mm-deal b{font-weight:600;color:var(--text);font-size:10.5px;margin-left:4px;font-variant-numeric:tabular-nums}
+.mm-deal:hover{color:var(--primary);border-color:rgba(29,107,79,.35)}
 .mm-deal:hover b{color:var(--primary)}
-.money-cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
-.money-sub{margin:0 0 8px;font-size:12px;font-weight:600;color:var(--text-2);display:flex;gap:7px;align-items:baseline}
-.money-sub span{font-size:11px;font-weight:400;color:var(--text-3)}
-.mch-row{display:grid;grid-template-columns:70px minmax(0,1fr) auto;gap:10px;align-items:center;padding:5px 0;font-size:12.5px;border-top:1px solid var(--border)}
+.money-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}
+.money-sub{margin:0 0 10px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);display:flex;gap:8px;align-items:baseline;font-weight:600}
+.money-sub span{font-size:11px;letter-spacing:0;text-transform:none;font-weight:400;color:var(--text-3)}
+.mch-row{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 0;font-size:12px;border-top:1px solid var(--border)}
 .mch-row:first-child{border-top:0}
 .mch-k{color:var(--text-2)}
-.mch-bar{height:6px;border-radius:4px;background:var(--surface-2);overflow:hidden}
+.mch-bar{height:5px;border-radius:100px;background:var(--surface-3);overflow:hidden}
 .mch-bar i{display:block;height:100%;background:var(--primary-2);transform-origin:left center;will-change:transform}
-.mch-v{font-family:var(--mono);font-size:12.5px;text-align:right;white-space:nowrap;color:var(--text)}
-.mch-v small{color:var(--text-3);font-size:10.5px;margin-left:7px;font-family:var(--sans)}
-.meff{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
-.meff-item b{display:block;font-family:var(--mono);font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
-.meff-item span{display:block;font-size:11px;color:var(--text-3);line-height:1.35}
-.money-note{margin-top:13px;padding-top:11px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text-3);line-height:1.55}
+.mch-v{font-size:12px;text-align:right;white-space:nowrap;color:var(--text);font-variant-numeric:tabular-nums}
+.mch-v small{color:var(--text-3);font-size:11px;margin-left:7px;font-family:var(--sans)}
+.meff{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+.meff-item b{display:block;font-size:18px;font-weight:600;letter-spacing:-.02em;line-height:1.2;font-variant-numeric:tabular-nums}
+.meff-item span{display:block;font-size:11px;color:var(--text-3);line-height:1.4;margin-top:3px}
+.money-note{margin-top:16px;padding-top:13px;border-top:1px solid var(--border);font-size:11px;color:var(--text-3);line-height:1.55}
 .mm-row.on .mm-lbl{color:var(--text);font-weight:600}
 .mm-row.on .mm-track{box-shadow:inset 0 0 0 1px var(--border-strong)}
+
 /* ---------- сентябрь: только подписанные ---------- */
-.sep{margin-top:12px;padding:16px 18px 14px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
-.sep-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between;margin-bottom:10px}
-.sep-h b{font-size:13.5px;font-weight:600}
-.sep-h span{font-size:11.5px;color:var(--text-3)}
-.sep-row{display:grid;grid-template-columns:minmax(0,1fr) 150px 150px;gap:14px;align-items:baseline;padding:7px 0;border-top:1px solid var(--border);font-size:13px}
+.sep{margin-top:16px;padding:24px 28px 20px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface)}
+.sep-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between;margin-bottom:12px}
+.sep-h b{font-size:16px;font-weight:600}
+.sep-h span{font-size:12px;color:var(--text-3)}
+.sep-row{display:grid;grid-template-columns:minmax(0,1fr) 150px 150px;gap:14px;align-items:baseline;padding:8px 0;border-top:1px solid var(--border);font-size:13px}
 .sep-row:first-of-type{border-top:0}
 .sep-row a{color:var(--text);text-decoration:none;border-bottom:1px dashed var(--border-strong)}
 .sep-row a:hover{color:var(--primary);border-bottom-color:var(--primary)}
-.sep-sum{font-family:var(--mono);text-align:right;font-weight:600;white-space:nowrap}
-.sep-share{font-size:11.5px;color:var(--text-3);text-align:right;white-space:nowrap}
-.sep-tot{border-top:2px solid var(--border-strong);margin-top:2px;padding-top:9px}
-.sep-note{margin-top:12px;font-size:11.5px;color:var(--text-3);line-height:1.55}
-.p-seq{color:var(--seq);background:var(--surface);border-color:var(--seq)}
-.p-ruq{color:var(--ruq);background:var(--surface);border-color:var(--ruq)}
-.p-spr{color:var(--spr);background:var(--surface);border-color:var(--spr)}
-.copy{
-  display:inline-flex;align-items:flex-start;gap:7px;font-family:var(--mono);font-size:13px;flex-wrap:wrap;
-  background:none;border:0;padding:2px 4px;margin:-2px -4px;color:var(--text-2);cursor:pointer;
-  border-radius:5px;transition:background .15s,color .15s;text-align:left;max-width:100%
-}
-.copy:hover{background:var(--primary-soft);color:var(--primary)}
-.copy svg{width:14px;height:14px;opacity:0;transition:opacity .15s;flex:0 0 auto}
-.copy:hover svg{opacity:.7}
-.copy.done{color:var(--pos)}
-.tbl-foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-top:12px;font-size:12.5px;color:var(--text-3)}
-.empty{padding:44px 20px;text-align:center;color:var(--text-3);font-size:14px}
-.funnel{margin-top:16px;padding:16px 18px 14px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
-.funnel-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between;margin-bottom:12px}
-.funnel-h b{font-size:13.5px;font-weight:600}
-.funnel-h span{font-size:11.5px;color:var(--text-3)}
-.funnel-bar{display:flex;height:10px;border-radius:6px;overflow:hidden;background:var(--surface-2);margin-bottom:14px}
+.sep-sum{text-align:right;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.sep-share{font-size:11px;color:var(--text-3);text-align:right;white-space:nowrap}
+.sep-tot{border-top:2px solid var(--border-strong);margin-top:2px;padding-top:10px}
+.sep-note{margin-top:12px;font-size:11px;color:var(--text-3);line-height:1.55}
+
+/* ---------- funnel ---------- */
+.funnel{margin-top:20px;padding:26px 28px 22px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface)}
+.funnel-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between;margin-bottom:16px}
+.funnel-h b{font-size:16px;font-weight:600;letter-spacing:-.015em}
+.funnel-h span{font-size:12px;color:var(--text-3)}
+.funnel-bar{display:flex;height:8px;border-radius:100px;overflow:hidden;background:var(--surface-3);margin-bottom:20px}
 .funnel-bar i{display:block;height:100%;transform-origin:left center;will-change:transform}
 .funnel-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}
-.fn{display:flex;flex-direction:column;gap:2px}
-.fn-k{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--text-3);line-height:1.25}
-.fn-k i{width:8px;height:8px;border-radius:2px;flex:none}
-.fn-v{font-family:var(--mono);font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.15}
-.fn-v small{font-size:12px;font-weight:500;color:var(--text-3);margin-left:1px}
-.fn-n{font-size:11.5px;color:var(--text-3)}
-.funnel-detail{margin-top:13px;padding-top:11px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text-3);line-height:1.55}
-.funnel-prev{margin-top:11px;padding-top:12px;border-top:1px dashed var(--border-strong);display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.fn{display:flex;flex-direction:column;gap:3px;min-width:0}
+.fn-k{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-3);line-height:1.25}
+.fn-k i{width:7px;height:7px;border-radius:2px;flex:none}
+.fn-v{font-size:24px;font-weight:600;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums}
+.fn-v small{font-size:11px;font-weight:500;color:var(--text-3);margin-left:1px}
+.fn-n{font-size:11px;color:var(--text-3)}
+.funnel-detail{margin-top:16px;padding-top:13px;border-top:1px solid var(--border);font-size:11px;color:var(--text-3);line-height:1.55}
+.funnel-prev{margin-top:13px;padding-top:14px;border-top:1px dashed var(--border-strong);display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
 .funnel-prev[hidden]{display:none}
 .fp-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;min-width:0}
-.fp-lab{font-size:11.5px;font-weight:600;color:var(--text-2)}
+.fp-lab{font-size:11px;font-weight:600;color:var(--text-2)}
 .fp-lab::before{content:"\21A9";margin-right:5px;color:var(--text-3);font-size:12px}
-.fp-n{font-size:13px;font-weight:600}
-.fp-sub{font-size:11.5px;color:var(--text-3)}
+.fp-n{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.fp-sub{font-size:11px;color:var(--text-3)}
 .fp-chips{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
-.fp-chip{font-family:var(--sans);font-size:11.5px;line-height:1.5;padding:2px 9px;border-radius:100px;border:1px dashed var(--border-strong);background:transparent;color:var(--text-2);cursor:pointer;transition:color .15s,border-color .15s,background .15s,transform .12s var(--ease-out)}
+.fp-chip{
+  font-family:var(--sans);font-size:11px;line-height:1.5;padding:2px 9px;border-radius:100px;
+  border:1px dashed var(--border-strong);background:transparent;color:var(--text-2);cursor:pointer;
+  transition:color .15s,border-color .15s,background .15s,transform .12s var(--ease-out)
+}
 .fp-chip:active{transform:scale(.97)}
-.tag-prev{display:block;margin-top:2px;font-size:10.5px;line-height:1.4;color:var(--text-3)}
+.tag-prev{display:block;margin-top:3px;font-size:10px;line-height:1.4;color:var(--text-3)}
 @media (hover:hover) and (pointer:fine){.fp-chip:hover{color:var(--pos);border-color:var(--pos);background:var(--pos-soft)}}
-@media (max-width:1200px){.funnel-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media (max-width:900px){.funnel-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:520px){.funnel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ---------- callouts / details ---------- */
-.callout{border-radius:var(--r);padding:16px 18px;font-size:14px;margin-top:16px;border:1px solid}
-.callout.amber{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
-.callout.blue{background:var(--primary-soft);border-color:color-mix(in srgb,var(--primary) 24%,transparent)}
+.callout{position:relative;border-radius:14px;padding:16px 20px 16px 42px;font-size:13.5px;margin-top:18px;border:1px solid var(--border);background:var(--surface-2);line-height:1.55}
+.callout::before{content:"";position:absolute;left:19px;top:23px;width:6px;height:6px;border-radius:50%;background:var(--text-3)}
+.callout.amber{border-color:rgba(168,101,0,.18);background:#FCF7EE}
+.callout.amber::before{background:var(--accent)}
+.callout.blue{border-color:rgba(29,107,79,.18);background:var(--primary-soft)}
+.callout.blue::before{background:var(--primary)}
 .callout b{font-weight:600}
-details{border:1px solid var(--border);border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow)}
+details{border:1px solid var(--border);border-radius:18px;background:var(--surface);box-shadow:none}
 details+details{margin-top:10px}
-summary{
-  cursor:pointer;list-style:none;padding:15px 18px;font-size:14.5px;font-weight:600;
-  display:flex;align-items:center;gap:10px;transition:background .18s
-}
+summary{cursor:pointer;list-style:none;padding:16px 20px;font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:10px;transition:background .16s}
 summary::-webkit-details-marker{display:none}
 summary:hover{background:var(--surface-2)}
-summary .chev{margin-left:auto;transition:transform .22s cubic-bezier(.16,1,.3,1);color:var(--text-3)}
+summary .chev{margin-left:auto;transition:transform .22s var(--ease-out);color:var(--text-3)}
 details[open] summary .chev{transform:rotate(180deg)}
-.d-body{padding:0 18px 18px;font-size:13.5px;color:var(--text-2);max-width:92ch}
+.d-body{padding:0 20px 20px;font-size:13.5px;color:var(--text-2);max-width:92ch}
 .d-body p+p{margin-top:12px}
 .d-body b{color:var(--text)}
-.d-body code{font-family:var(--mono);font-size:12.5px;background:var(--surface-2);padding:1px 5px;border-radius:4px}
+.d-body code{font-family:var(--mono);font-size:12px;background:var(--surface-2);padding:1px 5px;border-radius:4px}
 
-footer{margin-top:44px;padding-top:22px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;font-size:12.5px;color:var(--text-3)}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;font-size:12px;color:var(--text-3)}
 
 /* ---------- toast ---------- */
 .toast{
-  position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);opacity:0;pointer-events:none;
-  background:var(--text);color:var(--bg);font-size:13.5px;padding:11px 18px;border-radius:100px;
-  box-shadow:var(--shadow);transition:opacity .2s,transform .2s;z-index:60
+  position:fixed;left:50%;bottom:28px;transform:translate(-50%,14px) scale(.98);opacity:0;pointer-events:none;
+  background:rgba(29,29,31,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  color:#FFF;font-size:13px;padding:11px 18px;border-radius:100px;
+  box-shadow:0 18px 40px -16px rgba(0,0,0,.4);transition:opacity .2s var(--ease-out),transform .2s var(--ease-out);z-index:80
 }
-.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast.on{opacity:1;transform:translate(-50%,0) scale(1)}
 
-html.js-reveal .reveal{opacity:0;transform:translateY(14px)}
-html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
+/* ---------- reveal ---------- */
+html.js-reveal .reveal{opacity:0;transform:translateY(10px)}
+html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
 @media print{.reveal,.js-reveal .reveal{opacity:1!important;transform:none!important}}
 
+/* ---------- responsive ---------- */
 @media (max-width:1080px){
-  .head{grid-template-columns:1fr;gap:26px;align-items:start}
+  .head{grid-template-columns:1fr;gap:28px;align-items:start}
   .ring-box{align-items:flex-start;flex-direction:row;gap:18px}
   .ring-cap{text-align:left}
   .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpis>.kpi:first-child{grid-column:1/-1}
   .kpis--split{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .kpis--split .kpi--dir{grid-column:1 / -1}
+  .kpis--split .kpi--dir{grid-column:1/-1}
   .grid-2,.grid-2.even{grid-template-columns:1fr}
 }
 @media (max-width:760px){
-  .wrap{padding:0 16px 56px}
-  #leads-tbl{font-size:12.5px}
-  #leads-tbl thead th,#leads-tbl tbody td{padding:9px 8px}
-  #leads-tbl td.d{padding-left:8px}
-  .copy svg{display:none}
-  .nav-in{padding:0 16px;height:58px;gap:12px}
-  .brand span{display:none}
+  .wrap{padding:0 16px 64px}
+  .nav-in{padding:0 16px;height:54px;gap:10px}
+  .brand span+span{display:none}
   .nav-links{display:none}
-  .kpis{grid-template-columns:1fr}
-  .kpis--split .kpi--dir{grid-column:auto}
-  .kpi-lab{min-height:0}
-  .search{max-width:none;min-width:0}
+  .yper{margin-left:auto}
+  .yper-lab,.yper-sep,.yper-ix{display:none}
+  .yper-btn{padding:5px 11px}
+  .yper-pop{left:auto;right:0;width:min(336px,calc(100vw - 32px))}
+  .head{padding:56px 0 40px}
+  .lede{font-size:15.5px;margin-top:18px}
+  .meta{gap:7px 0}
+  .tag+.tag::before{margin:0 8px}
+  section{padding:48px 0}
+  #kpi{padding-top:40px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpis>.kpi:first-child{grid-column:1/-1}
+  .kpis--split{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpis--split>.kpi:first-child{grid-column:1/-1}
+  .kpis--split .kpi--dir{grid-column:1/-1}
+  .kpi{padding:20px 18px}
+  .kpi-lab{min-height:32px;margin-bottom:16px}
+  .kpi-val{font-size:30px;letter-spacing:-.03em}
+  .kpis>.kpi:first-child .kpi-val{font-size:52px}
+  .panel,.money,.sep,.funnel{padding:20px;border-radius:18px}
+  .grid-2,.grid-2.even{gap:14px}
+  .sm{grid-template-columns:1fr;gap:9px}
+  .sm-line{grid-template-columns:minmax(40px,1fr) 52px 58px}
+  .money-cols{grid-template-columns:minmax(0,1fr);gap:20px}
+  .mch-row{grid-template-columns:64px minmax(0,1fr);gap:5px 10px}
+  .mch-k{grid-column:1;grid-row:1}
+  .mch-v{grid-column:2;grid-row:1;white-space:normal;overflow-wrap:anywhere}
+  .mch-v small{display:block;margin-left:0;margin-top:2px}
+  .mch-bar{grid-column:1/-1;grid-row:2}
+  .funnel-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}
+  .tbl-wrap.is-scroll + .scroll-hint{display:block}
+  .funnel-bar{margin-bottom:18px}
+  .toolbar{align-items:stretch}
+  .chips{width:100%}
+  .search{max-width:none;min-width:0;flex:1 1 100%}
+  table{font-size:12px}
+  thead th{padding:9px 8px;font-size:9.5px;letter-spacing:.05em}
+  tbody td{padding:10px 8px}
+  .pill{font-size:11px;padding:2px 7px}
+  #leads-tbl{min-width:720px;font-size:12px}
+  #leads-tbl thead th,#leads-tbl tbody td{padding:10px 9px}
+  #leads-tbl td.d{padding-left:9px}
+  .copy svg{display:none}
+  .sep-row{grid-template-columns:minmax(0,1fr) 110px;gap:8px 12px}
+  .sep-share{display:none}
+  .mm-row{grid-template-columns:82px minmax(0,1fr);gap:10px 12px}
+  .mm-val{grid-column:2;text-align:right;min-width:0}
+  .mm-track{height:22px}
+  footer{margin-top:48px}
+}
+@media (max-width:520px){
+  h1{font-size:clamp(36px,11vw,48px)}
+  .meta{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
+  .tag+.tag::before{display:none}
+  .tag{font-size:12px}
+  .tag:nth-child(n+5){display:none}
+  .funnel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (prefers-reduced-motion:reduce){
-  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+@media (prefers-reduced-transparency:reduce){
+  .nav,.yper-pop{background:var(--surface);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--border:rgba(0,0,0,.2);--border-strong:rgba(0,0,0,.4);--text-2:#3A3A3C;--text-3:#5A5A5E}
+  .nav{background:var(--surface)}
+}
+
+/* ---------- print ---------- */
 @media print{
-  body{background:#fff}
+  body{background:#FFF}
   .nav,.toolbar,.toast,.copy svg,.yper,.yper-pop{display:none!important}
   .wrap{max-width:none;padding:0}
-  /* A4 landscape даёт ~1048 px — это ниже брейкпоинта 1080 px, из-за чего плитки
-     перестраивались в две колонки и блок KPI расползался на две страницы.
-     Для печати принудительно держим настольную раскладку. */
-  .head{grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center}
+  .head{grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center;padding:4px 0 18px}
   .ring-box{flex-direction:column;align-items:center}
   .ring-cap{text-align:center}
   .kpis{grid-template-columns:repeat(5,minmax(0,1fr))}
-  .kpis--split{grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.75fr)}
+  .kpis>.kpi:first-child{grid-column:auto}
+  .kpis--split{grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.7fr)}
   .kpis--split .kpi--dir{grid-column:auto}
   .grid-2,.grid-2.even{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .head{padding:4px 0 18px}
   section{padding:22px 0;border-bottom:0;break-inside:avoid}
   .kpi,.panel,.tbl-wrap,details{box-shadow:none}
   .tbl-wrap{max-height:none;overflow:visible}
@@ -490,6 +613,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   details>summary{list-style:none}
   .d-body{display:block!important}
   .nav-links{display:none}
+  .reveal,.js-reveal .reveal{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
@@ -497,10 +621,10 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
 <nav class="nav" aria-label="Разделы отчёта">
   <div class="nav-in">
-    <div class="brand"><span id="brandDates">Отчёт 02–08.11</span> <span>· Performance</span></div>
+    <div class="brand"><span id="brandDates">Отчёт 09–15.11</span> <span>· Performance</span></div>
     <div class="yper" id="yper">
       <button class="yper-btn" id="yperBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
-        <span class="yper-lab">Период</span><span class="yper-sep" aria-hidden="true"></span><span class="yper-ix" id="yperIx">w12</span><span class="yper-dates" id="yperDates">02.11 – 08.11</span>
+        <span class="yper-lab">Период</span><span class="yper-sep" aria-hidden="true"></span><span class="yper-ix" id="yperIx">w13</span><span class="yper-dates" id="yperDates">09.11 – 15.11</span>
         <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
       </button>
       <div class="yper-pop" id="yperPop" role="dialog" aria-label="Выбор периода">
@@ -531,10 +655,6 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       <a href="#seo">SEO</a>
       <a href="#leads">Лиды</a>
     </div>
-    <button class="icon-btn" id="theme" type="button" aria-label="Переключить тему оформления">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-    </button>
   </div>
 </nav>
 
@@ -542,89 +662,89 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   <header class="head">
     <div>
-      <div class="eyebrow" id="eyebrow">Рекламная кампания · неделя к неделе</div>
-      <h1 id="h1per">2 – 8 ноября 2026</h1>
+      <h1 id="h1per">9 – 15 ноября 2026</h1>
+      <p class="lede">Директ, CRM и Метрика: от показов до подписанных сделок. Два рекламных кабинета, сверка по карточкам сделок.</p>
       <div class="meta">
-        <span class="tag">Сравнение <b id="vsPrev">vs 26.10–01.11</b></span>
-        <span class="tag">ЦЛ <b id="t-leads">10</b></span>
-        <span class="tag">Бюджет <b id="t-spend">48 345 ₽</b></span>
-        <span class="tag">CPL <b id="t-cpl">4 835 ₽</b></span>
-        <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>02.11–08.11</b></span>
-        <span class="tag">Сформировано <b>09.11.2026</b></span>
-        <span class="tag">Сборка <b id="buildStamp">09.11 13:02</b></span>
+        <span class="tag">Сравнение <b id="vsPrev">vs 02.11–08.11</b></span>
+        <span class="tag">ЦЛ <b id="t-leads">5</b></span>
+        <span class="tag">Бюджет <b id="t-spend">53 877 ₽</b></span>
+        <span class="tag">CPL <b id="t-cpl">10 775 ₽</b></span>
+        <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>09.11–15.11</b></span>
+        <span class="tag">Сформировано <b>16.11.2026</b></span>
+        <span class="tag">Сборка <b id="buildStamp">16.11 12:00</b></span>
       </div>
     </div>
     <div class="ring-box" id="ringBox" style="display:none">
       <div id="ring"></div>
-      <p class="ring-cap">Октябрь выполнен на <b class="mono">97%</b> — 63 целевых из 65 по плану за 31 день · план пересмотрен 26.10 (было 35) · ноябрь: план 46</p>
+      <p class="ring-cap">Ноябрь: <b class="mono">15</b> целевых из <b class="mono">70</b> по плану (21%) · контрольная точка 15.11 — 34 ЦЛ, факт 44% точки · план медиаплана от 03.11</p>
     </div>
   </header>
 
   <section id="kpi">
     <div class="sec-head"><h2>Ключевые показатели</h2></div>
     <div class="kpis">
-      <article class="kpi reveal">
+      <article class="kpi">
         <div class="kpi-lab">Целевые лиды<br>главная метрика</div>
-        <div class="kpi-val" id="kv-leads" data-count="10" data-cur="10">10</div>
-        <div class="kpi-foot"><span class="delta down"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M6 10l3.5-3.5M6 10L2.5 6.5"/></svg>−29%</span><span class="kpi-note">было 14</span></div>
+        <div class="kpi-val" id="kv-leads" data-count="5" data-cur="5">5</div>
+        <div class="kpi-foot"><span class="delta down"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M6 10l3.5-3.5M6 10L2.5 6.5"/></svg>−50%</span><span class="kpi-note">было 10</span></div>
       </article>
-      <article class="kpi reveal">
+      <article class="kpi">
         <div class="kpi-lab">Лиды всего<br>все обращения</div>
-        <div class="kpi-val" id="kv-allleads" data-cur="188">188</div>
-        <div class="kpi-foot"><span class="kpi-note">из них 10 целевых</span></div>
+        <div class="kpi-val" id="kv-allleads" data-cur="173">173</div>
+        <div class="kpi-foot"><span class="kpi-note">из них 5 целевых</span></div>
       </article>
-      <article class="kpi reveal">
+      <article class="kpi">
         <div class="kpi-lab">Цена целевого лида</div>
-        <div class="kpi-val" id="kv-cpl" data-count="4835" data-cur="4835">4 835 ₽</div>
-        <div class="kpi-foot"><span class="delta up"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10V2M6 2L2.5 5.5M6 2l3.5 3.5"/></svg>−23%</span><span class="kpi-note">было 6 267 ₽</span></div>
+        <div class="kpi-val" id="kv-cpl" data-count="10775" data-cur="10775">10 775 ₽</div>
+        <div class="kpi-foot"><span class="delta up"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10V2M6 2L2.5 5.5M6 2l3.5 3.5"/></svg>+123%</span><span class="kpi-note">было 4 835 ₽</span></div>
       </article>
-      <article class="kpi reveal">
+      <article class="kpi">
         <div class="kpi-lab">Рекламный бюджет</div>
-        <div class="kpi-val" id="kv-spend" data-cur="48345">48 345 ₽</div>
-        <div class="kpi-foot"><span class="delta flat"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M6 10l3.5-3.5M6 10L2.5 6.5"/></svg>−45%</span><span class="kpi-note">было 87 738 ₽</span></div>
+        <div class="kpi-val" id="kv-spend" data-cur="53877">53 877 ₽</div>
+        <div class="kpi-foot"><span class="delta flat"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M6 10l3.5-3.5M6 10L2.5 6.5"/></svg>+11%</span><span class="kpi-note">было 48 345 ₽</span></div>
       </article>
-      <article class="kpi reveal">
+      <article class="kpi">
         <div class="kpi-lab">Конверсия клик → ЦЛ</div>
-        <div class="kpi-val" id="kv-conv" data-cur="1.18">1,18%</div>
-        <div class="kpi-foot"><span class="delta down">−1,94 п.п.</span><span class="kpi-note">было 3,12%</span></div>
-        <div class="kpi-sub">3-мес скользящая (сен–ноя): <b class="mono">2,92%</b> · 122 ЦЛ (49 + 63 + 10) / 4 185 кликов Директа</div>
+        <div class="kpi-val" id="kv-conv" data-cur="6.17">6,17%</div>
+        <div class="kpi-foot"><span class="delta down">+4,99 п.п.</span><span class="kpi-note">было 1,18%</span></div>
+        <div class="kpi-sub">3-мес скользящая (сен–ноя): <b class="mono">2,80%</b> · 127 ЦЛ (49 + 63 + 15) / 4 538 кликов Директа</div>
       </article>
     </div>
 
     <div class="kpis kpis--split">
-      <article class="kpi reveal">
+      <article class="kpi">
         <div class="kpi-lab">Директ<br>платный трафик</div>
-        <div class="kpi-val"><span id="ks-dir">5</span> <span class="kpi-unit">ЦЛ</span></div>
-        <div class="meter" aria-hidden="true"><i id="ks-dir-bar" data-w="50" style="width:50%;background:var(--primary)"></i></div>
-        <div class="kpi-foot"><span class="kpi-share" id="ks-dir-share">50% целевых</span><span class="kpi-note" id="ks-dir-note">9 669 ₽ за ЦЛ</span></div>
+        <div class="kpi-val"><span id="ks-dir">1</span> <span class="kpi-unit">ЦЛ</span></div>
+        <div class="meter" aria-hidden="true"><i id="ks-dir-bar" data-w="20" style="width:20%;background:var(--primary)"></i></div>
+        <div class="kpi-foot"><span class="kpi-share" id="ks-dir-share">20% целевых</span><span class="kpi-note" id="ks-dir-note">53 877 ₽ за ЦЛ</span></div>
       </article>
-      <article class="kpi reveal">
+      <article class="kpi">
         <div class="kpi-lab">SEO<br>органический трафик</div>
-        <div class="kpi-val"><span id="ks-seo">2</span> <span class="kpi-unit">ЦЛ</span></div>
+        <div class="kpi-val"><span id="ks-seo">1</span> <span class="kpi-unit">ЦЛ</span></div>
         <div class="meter" aria-hidden="true"><i id="ks-seo-bar" data-w="20" style="width:20%;background:var(--ch-src)"></i></div>
         <div class="kpi-foot"><span class="kpi-share" id="ks-seo-share">20% целевых</span><span class="kpi-note" id="ks-seo-note">вне рекламного бюджета</span></div>
       </article>
-      <article class="kpi reveal">
+      <article class="kpi">
         <div class="kpi-lab">Email<br>письма</div>
         <div class="kpi-val"><span id="ks-mail">3</span> <span class="kpi-unit">ЦЛ</span></div>
-        <div class="meter" aria-hidden="true"><i id="ks-mail-bar" data-w="30" style="width:30%;background:var(--ch-mail)"></i></div>
-        <div class="kpi-foot"><span class="kpi-share" id="ks-mail-share">30% целевых</span><span class="kpi-note" id="ks-mail-note">вне рекламного бюджета</span></div>
+        <div class="meter" aria-hidden="true"><i id="ks-mail-bar" data-w="60" style="width:60%;background:var(--ch-mail)"></i></div>
+        <div class="kpi-foot"><span class="kpi-share" id="ks-mail-share">60% целевых</span><span class="kpi-note" id="ks-mail-note">вне рекламного бюджета</span></div>
       </article>
-      <article class="kpi kpi--dir reveal">
+      <article class="kpi kpi--dir">
         <div class="kpi-lab">По направлениям<br>доля целевых</div>
         <div class="dirs">
           <span class="pill p-seq">Секвойя</span>
-          <span class="bar-track"><i class="bar-fill seq" id="kd-seq-bar" data-w="60" style="width:60%"></i></span>
-          <b class="dir-v" id="kd-seq-v">6</b>
-          <span class="dir-n" id="kd-seq-n">60%</span>
+          <span class="bar-track"><i class="bar-fill seq" id="kd-seq-bar" data-w="80" style="width:80%"></i></span>
+          <b class="dir-v" id="kd-seq-v">4</b>
+          <span class="dir-n" id="kd-seq-n">80%</span>
           <span class="pill p-ruq">Руки</span>
-          <span class="bar-track"><i class="bar-fill ruq" id="kd-ruq-bar" data-w="10" style="width:10%"></i></span>
-          <b class="dir-v" id="kd-ruq-v">1</b>
-          <span class="dir-n" id="kd-ruq-n">10%</span>
+          <span class="bar-track"><i class="bar-fill ruq" id="kd-ruq-bar" data-w="0" style="width:0%"></i></span>
+          <b class="dir-v" id="kd-ruq-v">0</b>
+          <span class="dir-n" id="kd-ruq-n">0%</span>
           <span class="pill p-spr">Solution PRO</span>
-          <span class="bar-track"><i class="bar-fill spr" id="kd-spr-bar" data-w="30" style="width:30%"></i></span>
-          <b class="dir-v" id="kd-spr-v">3</b>
-          <span class="dir-n" id="kd-spr-n">30%</span>
+          <span class="bar-track"><i class="bar-fill spr" id="kd-spr-bar" data-w="20" style="width:20%"></i></span>
+          <b class="dir-v" id="kd-spr-v">1</b>
+          <span class="dir-n" id="kd-spr-n">20%</span>
           <span class="pill" id="kd-x-pill" hidden style="color:var(--text-3);border-color:var(--text-3)">Не определён</span>
           <span class="bar-track" id="kd-x-track" hidden><i class="bar-fill" id="kd-x-bar" data-w="0" style="width:0%;background:var(--text-3)"></i></span>
           <b class="dir-v" id="kd-x-v" hidden>—</b>
@@ -635,7 +755,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     </div>
 
     <div class="panel reveal" style="margin-top:18px">
-      <div class="panel-t">Тренд ЦЛ по проектам · 11 недель</div>
+      <div class="panel-t">Тренд ЦЛ по проектам · 12 недель</div>
       <div class="panel-s">Три ряда друг под другом — у каждого своя шкала Y; зелёной пунктирной линией отмечена «скользящая» на 3 недели (среднее предыдущих трёх недель). Наведите на столбик недели — даты и разбивка. Сравнивайте форму, а не высоту.</div>
       <div id="ch-trend"></div>
     </div>
@@ -651,7 +771,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   <section id="month" style="display:none">
     <div class="sec-head">
       <h2>Октябрь: итог</h2>
-      <p class="sub">План месяца — 65 целевых при бюджете 370 000 ₽ (сентябрьская план-отметка, пересмотрена 26.10 вместо сезонных 35). Итог: 63 целевых (CRM, созданные 01.10–31.10) и 396 494 ₽ расхода Директа за 01.10–01.11 — 97% плана по лидам и 107,2% по бюджету; в окне выгрузки есть один день ноября (01.11), поэтому расход к месяцу чуть завышен. Ноябрь открыт: план — 46 целевых.</p>
+      <p class="sub">Октябрь закрыт: 63 целевых из 65 (97%) при 396 494 ₽. Ноябрь идёт: <b class="mono">15</b> целевых за 01–15.11 из <b class="mono">70</b> по плану (21%), бюджет медиаплана — 480 000 ₽, контрольная точка 15.11 — 34 ЦЛ (факт 44% точки). Расход ноября — 104 381 ₽ за 01–15.11.</p>
     </div>
     <div class="grid-2">
       <div class="panel reveal">
@@ -671,7 +791,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
           <b>Октябрь закрыт на 97% плана:</b> <b class="mono">63</b> из <b class="mono">65</b>, недобор — 2 ЦЛ. Бюджет по Директу — 396 494 ₽ за 01.10–01.11: 107,2% плана 370 000 ₽ (окно на день длиннее месяца).
         </div>
         <div class="callout amber">
-          <b>Ноябрь — план 46 ЦЛ.</b> Все 14 целевых недели — сделки, созданные 26–30.10; обращений с 01.11 за отчётную неделю не зафиксировано — первый накопленный результат ноября будет виден в отчёте 02–08.11.
+          <b>Ноябрь — план 70 ЦЛ, и он уже отстаёт.</b> К 15.11 накоплено 15 целевых против контрольных 34: 44% точки при 50% срока. Неделя 09–15.11 дала 5 целевых из 173 обращений — вдвое меньше предыдущей недели (10).
         </div>
         <div class="cor-block">
           <div class="panel-t" style="margin-top:18px">Идём ли в коридоре? · итог на 31.10 ± 10%</div>
@@ -687,26 +807,26 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     <div class="grid-2 even">
       <div class="panel reveal">
         <div class="panel-t" id="wow-panel-t">Трафик и расход</div>
-        <div class="panel-s" id="wow-panel-s">02.11–08.11 против 26.10–01.11</div>
+        <div class="panel-s" id="wow-panel-s">09.11–15.11 против 02.11–08.11</div>
         <div id="ch-wow"></div>
       </div>
       <div class="panel reveal">
         <div class="panel-t">Полная таблица показателей</div>
-        <div class="panel-s" id="wow-panel-s2">Предыдущая неделя — из отчёта 26.10–01.11. Оба периода — Директ API, CRM и Метрика, сверка 09.11</div>
+        <div class="panel-s" id="wow-panel-s2">Предыдущая неделя — из отчёта 02–08.11. Оба периода — Директ API и CRM, сверка 16.11</div>
         <div class="tbl-wrap" style="max-height:none">
           <table style="min-width:0">
-            <thead><tr><th>Показатель</th><th id="cmp-h1">26.10–01.11</th><th id="cmp-h2">02–08.11</th><th>Изм.</th></tr></thead>
+            <thead><tr><th>Показатель</th><th id="cmp-h1">02.11–08.11</th><th id="cmp-h2">09–15.11</th><th>Изм.</th></tr></thead>
             <tbody id="cmp-body">
-              <tr><td>Целевые лиды (CRM)</td><td class="d">14</td><td class="d"><b>10</b></td><td class="d" style="color:var(--neg)">−29%</td></tr>
-              <tr><td>Показы (Директ)</td><td class="d">50 378</td><td class="d">152 209</td><td class="d">+202%</td></tr>
-              <tr><td>Клики (Директ)</td><td class="d">449</td><td class="d">846</td><td class="d">+88%</td></tr>
-              <tr><td>CTR</td><td class="d">0,89%</td><td class="d">0,56%</td><td class="d" style="color:var(--neg)">−0,33 п.п.</td></tr>
-              <tr><td>CPC</td><td class="d">195 ₽</td><td class="d">57 ₽</td><td class="d" style="color:var(--pos)">−71%</td></tr>
-              <tr><td>Конверсии Метрики</td><td class="d">43</td><td class="d">21</td><td class="d" style="color:var(--neg)">−51%</td></tr>
-              <tr><td>Рекламный бюджет</td><td class="d">87 738 ₽</td><td class="d">48 345 ₽</td><td class="d">−45%</td></tr>
-              <tr><td>Цена целевого лида</td><td class="d">6 267 ₽</td><td class="d">4 835 ₽</td><td class="d" style="color:var(--pos)">−23%</td></tr>
-              <tr><td>Конверсия клик → ЦЛ</td><td class="d">3,12%</td><td class="d">1,18%</td><td class="d" style="color:var(--neg)">−1,94 п.п.</td></tr>
-              <tr><td>Целевых в день</td><td class="d">2,00</td><td class="d"><b>1,43</b></td><td class="d" style="color:var(--neg)">−29%</td></tr>
+              <tr><td>Целевые лиды (CRM)</td><td class="d">10</td><td class="d"><b>5</b></td><td class="d" style="color:var(--neg)">−50%</td></tr>
+              <tr><td>Показы (Директ)</td><td class="d">152 209</td><td class="d">182 780</td><td class="d">+20%</td></tr>
+              <tr><td>Клики (Директ)</td><td class="d">846</td><td class="d">324</td><td class="d" style="color:var(--neg)">−62%</td></tr>
+              <tr><td>CTR</td><td class="d">0,56%</td><td class="d">0,18%</td><td class="d" style="color:var(--neg)">−0,38 п.п.</td></tr>
+              <tr><td>CPC</td><td class="d">57 ₽</td><td class="d">166 ₽</td><td class="d" style="color:var(--neg)">+191%</td></tr>
+              <tr><td>Конверсии Метрики</td><td class="d">21</td><td class="d">20</td><td class="d">−5%</td></tr>
+              <tr><td>Рекламный бюджет</td><td class="d">48 345 ₽</td><td class="d">53 877 ₽</td><td class="d">+11%</td></tr>
+              <tr><td>Цена целевого лида</td><td class="d">4 835 ₽</td><td class="d">10 775 ₽</td><td class="d" style="color:var(--neg)">+123%</td></tr>
+              <tr><td>Конверсия клик → ЦЛ</td><td class="d">1,18%</td><td class="d">6,17%</td><td class="d" style="color:var(--pos)">+4,99 п.п.</td></tr>
+              <tr><td>Целевых в день</td><td class="d">1,43</td><td class="d"><b>0,71</b></td><td class="d" style="color:var(--neg)">−50%</td></tr>
             </tbody>
           </table>
         </div>
@@ -722,7 +842,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     <div class="grid-2">
       <div class="panel reveal">
         <div class="panel-t">Распределение по каналам</div>
-        <div class="panel-s" id="src-cap">10 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу</div>
+        <div class="panel-s" id="src-cap">5 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу</div>
         <div id="ch-src"></div>
       </div>
       <div class="panel reveal">
@@ -730,7 +850,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         <div class="panel-s">Матрица «проект × источник»</div>
         <div id="mtx"></div>
         <div class="callout amber" id="src-callout">
-          <b>Директ дал 5 из 10 целевых</b> при бюджете 48,3 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">9,7 тыс. ₽</b> (48 345 / 5). Общая цена целевого лида всех каналов — 4 835 ₽.
+          <b>Директ дал 1 из 5 целевых</b> при бюджете 53,9 тыс. ₽. Расходы на один целевой лид Директа — <b class="mono">53,9 тыс. ₽</b> (53 877 / 1): неделя провалилась по кликам (324 против 846), и единственная целевая из Директа — МИКС. Общая цена целевого лида всех каналов — 10 775 ₽.
         </div>
       </div>
     </div>
@@ -741,25 +861,26 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     <div class="grid-2 even">
       <div class="panel reveal">
         <div class="panel-t" id="proj-ttl">Расход и цена целевого лида</div>
-        <div class="panel-s" id="proj-cap">43 166 ₽ на Секвойю (6 ЦЛ) · 5 179 ₽ на Руки (1 ЦЛ) · Solution PRO — 3 целевых без рекламного бюджета</div>
+        <div class="panel-s" id="proj-cap">50 734 ₽ на Секвойю (4 ЦЛ) · 3 144 ₽ на Руки (0 ЦЛ) · Solution PRO — 1 целевая без рекламного бюджета</div>
         <div id="ch-proj"></div>
       </div>
       <div class="panel reveal">
         <div class="panel-t">Сводка по проектам</div>
-        <div class="panel-s" id="proj-sub">Показы и клики — из выгрузки Яндекс.Директ API за 02.11–08.11</div>
+        <div class="panel-s" id="proj-sub">Показы и клики — из выгрузки Яндекс.Директ API за 09.11–15.11</div>
         <div class="tbl-wrap" style="max-height:none">
           <table style="min-width:0">
             <thead><tr><th>Проект</th><th>Показы</th><th>Клики</th><th>Расход</th><th>ЦЛ</th><th>CPL</th></tr></thead>
             <tbody id="proj-tb">
-              <tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">151 819</td><td class="d">832</td><td class="d">43 166 ₽</td><td class="d">6</td><td class="d">7 194 ₽</td></tr>
-              <tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">390</td><td class="d">14</td><td class="d">5 179 ₽</td><td class="d">1</td><td class="d">5 179 ₽</td></tr>
-              <tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Платного трафика нет: заявки приходят из писем и органики"><span style="font-family:var(--mono);font-size:11.5px;color:var(--text-3)">вне Direct</span></td><td class="d">3</td><td class="d" title="CPL не считается: бюджета нет">—</td></tr>
-              <tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">152 209</td><td class="d">846</td><td class="d">48 345 ₽</td><td class="d">10</td><td class="d">4 835 ₽</td></tr>
+              <tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">182 459</td><td class="d">313</td><td class="d">50 734 ₽</td><td class="d">4</td><td class="d">12 684 ₽</td></tr>
+              <tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">321</td><td class="d">11</td><td class="d">3 144 ₽</td><td class="d">0</td><td class="d" title="Целевых нет — CPL не считается">—</td></tr>
+              <tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct">—</td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct">—</td><td class="d" title="Платного трафика нет: заявки приходят из писем и органики"><span style="font-family:var(--mono);font-size:11.5px;color:var(--text-3)">вне Direct</span></td><td class="d">1</td><td class="d" title="CPL не считается: бюджета нет">—</td></tr>
+              <tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">182 780</td><td class="d">324</td><td class="d">53 877 ₽</td><td class="d">5</td><td class="d">10 775 ₽</td></tr>
             </tbody>
           </table>
         </div>
+        <p class="scroll-hint">Смахните вбок, чтобы увидеть все колонки →</p>
         <div class="panel-s" id="proj-foot" style="display:none;margin-top:10px;line-height:1.5"></div>
-        <div class="callout blue" id="proj-callout"><b>Solution PRO — 3 целевых при нулевом бюджете.</b> Три письма (МТС, Газпромбанк, Фудмаркет): домен не входит в отслеживаемые аккаунты Direct, поэтому расхода и CPL по нему нет.</div>
+        <div class="callout blue" id="proj-callout"><b>Solution PRO — 1 целевая при нулевом бюджете.</b> Письмо на s-pro.group (Почта России): домен не входит в отслеживаемые аккаунты Direct, поэтому расхода и CPL по нему нет. У «Руки» неделя без целевых: 11 кликов и 3 144 ₽ ушли вхолостую.</div>
       </div>
     </div>
   </section>
@@ -767,12 +888,12 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   <section id="seo">
     <div class="sec-head">
       <h2>SEO: видимость в органике</h2>
-      <p class="sub">Topvisor · Секвойя, Москва, Яндекс (десктоп) · последняя проверка 21.10 — за 02–08.11 выгрузка не делалась, данные приведены по состоянию на 21.10.</p>
+      <p class="sub">Topvisor · Секвойя, Москва, Яндекс (десктоп) · проверка 09.11: 530 ключей в проекте, 391 с позициями, 289 в ТОП-10 (54,5%), средняя позиция 8,18. По RUQI проверок в периоде нет.</p>
     </div>
     <div class="grid-2 even">
       <div class="panel reveal">
         <div class="panel-t">Динамика ТОП-5</div>
-        <div class="panel-s">Отслеживаются только ключи в ТОП-5 (решение 26.10) · 443 запроса Topvisor · данные на 12.10 и 21.10, за период новых проверок нет</div>
+        <div class="panel-s">Отслеживаются только ключи в ТОП-5 (решение 26.10) · детальные таблицы и структура — по сверке 21.10: это последний сопоставимый срез, за ноябрь Topvisor отдаёт только позиции без разбивки по ТОП-5</div>
         <div class="tbl-wrap" style="max-height:none">
           <table style="min-width:0">
             <thead><tr><th>Показатель</th><th>12.10</th><th>21.10</th><th>Изм.</th></tr></thead>
@@ -854,7 +975,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   <section id="leads">
     <div class="sec-head">
       <h2 id="leads-h2">Целевые лиды по клиентам</h2>
-      <p class="sub" id="leads-sub">10 сделок с тегом «Целевой», созданных 02.11–08.11. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 09.11.2026.</p>
+      <p class="sub" id="leads-sub">5 сделок с тегом «Целевой», созданных 09.11–15.11. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 16.11.2026.</p>
     </div>
 
     <div class="toolbar" id="leads-toolbar">
@@ -894,8 +1015,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       </table>
       <div class="empty" id="empty" hidden>Ничего не найдено — измените фильтры или поисковый запрос.</div>
     </div>
+    <p class="scroll-hint">Смахните вбок, чтобы увидеть все колонки →</p>
     <div class="funnel" id="funnel">
-      <div class="funnel-h"><b>Воронка по этапам</b><span id="funnel-sub">доля от показанных сделок · статус в CRM на 09.11.2026</span></div>
+      <div class="funnel-h"><b>Воронка по этапам</b><span id="funnel-sub">доля от показанных сделок · статус в CRM на 16.11.2026</span></div>
       <div class="funnel-bar" id="funnel-bar" aria-hidden="true"></div>
       <div class="funnel-grid" id="funnel-grid"></div>
       <div class="funnel-prev" id="funnel-prev" hidden></div>
@@ -903,7 +1025,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     </div>
     <div class="sep" id="sepPanel" hidden></div>
     <div class="money" id="money">
-      <div class="money-h"><b>Деньги: подписано</b><span>суммы договоров из карточек CRM · на 09.11.2026</span></div>
+      <div class="money-h"><b>Деньги: подписано</b><span>суммы договоров из карточек CRM · на 16.11.2026</span></div>
       <div class="mm-list" id="money-months"></div>
       <div class="mm-deals" id="money-deals"></div>
       <div class="money-cols">
@@ -920,13 +1042,13 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     </div>
     <div class="tbl-foot" id="tbl-foot">
       <span id="shown">Показано 10 из 10</span>
-      <span id="leads-period">Сделки, созданные 02.11–08.11.2026 · этап — текущий статус в CRM на 09.11.2026; факт периода — только количество, каналы и бюджет</span>
+      <span id="leads-period">Сделки, созданные 09.11–15.11.2026 · этап — текущий статус в CRM на 16.11.2026; факт периода — только количество, каналы и бюджет</span>
     </div>
   </section>
 
   <footer>
-    <span id="footPeriod">Отчёт по рекламной кампании · 02–08.11.2026</span>
-    <span>Сформировано 09.11.2026 · интерактивная версия · сборка <b id="buildStamp2">09.11 13:02</b> UTC</span>
+    <span id="footPeriod">Отчёт по рекламной кампании · 09–15.11.2026</span>
+    <span>Сформировано 16.11.2026 · интерактивная версия · сборка <b id="buildStamp2">16.11 12:00</b> UTC</span>
     <span id="baseCompare">База сравнения: неделя 26.10–01.11 (14 ЦЛ, 87 738 ₽)</span>
   </footer>
 </div>
@@ -946,16 +1068,6 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   var $  = function(s,r){ return (r||document).querySelector(s); };
   var $$ = function(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
 
-  /* ---------- theme ---------- */
-  var store = null;
-  try { store = localStorage.getItem('rep-theme'); } catch(e){}
-  root.setAttribute('data-theme', store || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
-  $('#theme').addEventListener('click', function(){
-    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('rep-theme', next); } catch(e){}
-    drawAll();
-  });
 
   /* ---------- reveal on scroll ---------- */
   var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function(entries){
@@ -988,16 +1100,16 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   function drawRing(){
     var host = $('#ring'); if(!host) return;
     host.innerHTML = '';
-    var R=54, C=2*Math.PI*R, pct=Math.min(1,63/65);
-    var svg = el('svg',{width:'132',height:'132',viewBox:'0 0 132 132',role:'img','aria-label':'Выполнение плана октября: 63 из 65 целевых, 97%'});
+    var R=54, C=2*Math.PI*R, done=15, plan=70, pct=Math.min(1,done/plan);
+    var svg = el('svg',{width:'132',height:'132',viewBox:'0 0 132 132',role:'img','aria-label':'Выполнение плана ноября: 15 из 70 целевых, 21%'});
     svg.appendChild(el('circle',{cx:66,cy:66,r:R,fill:'none',stroke:cssv('--surface-2'),'stroke-width':'11'}));
     var arc = el('circle',{cx:66,cy:66,r:R,fill:'none',stroke:cssv('--primary'),'stroke-width':'11','stroke-linecap':'round',
       'stroke-dasharray':C,'stroke-dashoffset':C,'transform':'rotate(-90 66 66)'});
     svg.appendChild(arc);
     var t1=el('text',{x:66,y:64,'text-anchor':'middle',fill:cssv('--text'),'font-size':'27','font-weight':'600','font-family':'var(--mono)'});
-    t1.textContent='97%';
+    t1.textContent='21%';
     var t2=el('text',{x:66,y:83,'text-anchor':'middle',fill:cssv('--text-3'),'font-size':'12','font-family':'var(--mono)'});
-    t2.textContent='63 / 65';
+    t2.textContent='15 / 70';
     svg.appendChild(t1); svg.appendChild(t2);
     host.appendChild(svg);
     if (reduce) { arc.setAttribute('stroke-dashoffset', String(C*(1-pct))); return; }
@@ -1091,9 +1203,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   var CMP = {
     w:{title:'Неделя к неделе',
        sub:'Сравнение с предыдущей неделей по данным Яндекс.Директ API и CRM.',
-       pt:'Трафик и расход', ps:'02.11–08.11 против 26.10–01.11',
-       la:'26.10–01.11', lb:'02–08.11',
-       bars:[{k:'Показы',a:50378,b:152209},{k:'Клики',a:449,b:846},{k:'Бюджет, тыс ₽',a:87.7,b:48.3},{k:'Целевые',a:14,b:10}]},
+       pt:'Трафик и расход', ps:'09.11–15.11 против 02.11–08.11',
+       la:'02.11–08.11', lb:'09–15.11',
+       bars:[{k:'Показы',a:152209,b:182780},{k:'Клики',a:846,b:324},{k:'Бюджет, тыс ₽',a:48.3,b:53.9},{k:'Целевые',a:10,b:5}]},
     m:{title:'Месяц к месяцу',
        sub:'Октябрь против сентября · Директ API и CRM. Октябрь — окно выгрузки 01.10–01.11 (в нём один день ноября), сентябрь — 01.09–30.09.',
        pt:'Результат и стоимость', ps:'октябрь против сентября',
@@ -1150,18 +1262,18 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
   function updCmp(p){
     var m=(p==='m10'||p==='pall'), c=m?CMP.m:CMP.w;
-    var sec=$('#wow'); if(sec) sec.style.display=(p==='p6'||m)?'':'none';
+    var sec=$('#wow'); if(sec) sec.style.display=(p==='p6'||p==='p7'||m)?'':'none';
     setTxt('wow-title',c.title); setTxt('wow-sub',c.sub);
     setTxt('wow-panel-t',c.pt); setTxt('wow-panel-s',c.ps);
-    setTxt('wow-panel-s2',m?'Предыдущий месяц — из месячного отчёта. Октябрь — окно выгрузки 01.10–01.11, сентябрь — 01.09–30.09':'Предыдущая неделя — из отчёта 26.10–01.11. Оба периода — Директ API, CRM и Метрика, сверка 09.11');
-    setTxt('cmp-h1',m?'сентябрь':'26.10–01.11'); setTxt('cmp-h2',m?'октябрь':'02–08.11');
+    setTxt('wow-panel-s2',m?'Предыдущий месяц — из месячного отчёта. Октябрь — окно выгрузки 01.10–01.11, сентябрь — 01.09–30.09':'Предыдущая неделя — из отчёта 02–08.11. Оба периода — Директ API и CRM, сверка 16.11');
+    setTxt('cmp-h1',m?'сентябрь':'02.11–08.11'); setTxt('cmp-h2',m?'октябрь':'09–15.11');
     var tb=$('#cmp-body'); if(tb) tb.innerHTML = m ? CMP_MONTH_TABLE : (WEEK_TABLE!=null?WEEK_TABLE:tb.innerHTML);
     drawCmp(c);
   }
 
   /* channel bars */
-  var SRC_W={base:10,max:5,aria:'Источники целевых: Директ 5, SEO 2, Email 3',rows:[
-    {k:'Директ',v:5,c:'--primary',d:'9,7 тыс. ₽ на ЦЛ'},{k:'SEO / Органика',v:2,c:'--ch-src'},{k:'Email',v:3,c:'--ch-mail'}]};
+  var SRC_W={base:5,max:3,aria:'Источники целевых: Директ 1, SEO 1, Email 3',rows:[
+    {k:'Директ',v:1,c:'--primary',d:'53,9 тыс. ₽ на ЦЛ'},{k:'SEO / Органика',v:1,c:'--ch-src'},{k:'Email',v:3,c:'--ch-mail'}]};
   var SRC_M={base:63,max:38,aria:'Источники целевых: Директ 38, SEO 16, Email 9',rows:[
     {k:'Директ',v:38,c:'--primary',d:'10,4 тыс. ₽ на ЦЛ'},{k:'SEO / Органика',v:16,c:'--ch-src'},{k:'Email',v:9,c:'--ch-mail'}]};
   var SRC=SRC_W;
@@ -1190,9 +1302,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
 
   /* project matrix */
-  var MTX_W=[{p:'Sequoia',c:['--seq','Sequoia'],cls:'seq',direct:4,seo:2,email:0},
-           {p:'Ruqi',c:['--ruq','Ruqi'],cls:'ruq',direct:1,seo:0,email:0},
-           {p:'Solution PRO',c:['--spr','Solution PRO'],cls:'spr',direct:0,seo:0,email:3}];
+  var MTX_W=[{p:'Sequoia',c:['--seq','Sequoia'],cls:'seq',direct:1,seo:1,email:2},
+           {p:'Ruqi',c:['--ruq','Ruqi'],cls:'ruq',direct:0,seo:0,email:0},
+           {p:'Solution PRO',c:['--spr','Solution PRO'],cls:'spr',direct:0,seo:0,email:1}];
   var MTX_M=[{p:'Sequoia',c:['--seq','Sequoia'],cls:'seq',direct:23,seo:11,email:1},
            {p:'Ruqi',c:['--ruq','Ruqi'],cls:'ruq',direct:12,seo:0,email:4},
            {p:'Solution PRO',c:['--spr','Solution PRO'],cls:'spr',direct:3,seo:5,email:4}];
@@ -1216,16 +1328,16 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
 
   /* project bars */
-  var PROJ_W=[{k:'Sequoia',v:7194,b:'43 166 ₽ / 6 ЦЛ',c:'--seq',cls:'seq'},{k:'Ruqi',v:5179,b:'5 179 ₽ / 1 ЦЛ',c:'--ruq',cls:'ruq'},{k:'Solution PRO',v:null,b:'бюджета нет / 3 ЦЛ',c:'--spr',cls:'spr'}];
-  var PROJ_CFG_W={unit:'₽',max:8000};
+  var PROJ_W=[{k:'Sequoia',v:50734,b:'50 734 ₽ / 4 ЦЛ',c:'--seq',cls:'seq'},{k:'Ruqi',v:3144,b:'3 144 ₽ / 0 ЦЛ',c:'--ruq',cls:'ruq'},{k:'Solution PRO',v:null,b:'бюджета нет / 1 ЦЛ',c:'--spr',cls:'spr'}];
+  var PROJ_CFG_W={unit:'₽',max:60000};
   var PROJ_M=[{k:'Sequoia',v:284731,b:'284 731 ₽ / 35 ЦЛ',c:'--seq',cls:'seq'},{k:'Ruqi',v:111762,b:'111 762 ₽ / 16 ЦЛ',c:'--ruq',cls:'ruq'},{k:'Solution PRO',v:null,b:'бюджета нет / 12 ЦЛ',c:'--spr',cls:'spr'}];
   var PROJ_CFG_M={unit:'₽',max:300000};
   var PROJ=PROJ_W; var PROJ_CFG=PROJ_CFG_W;
   var PROJ_ROWS={
-    week:'<tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">151 819</td><td class="d">832</td><td class="d">43 166 ₽</td><td class="d">6</td><td class="d">7 194 ₽</td></tr>'
-      +'<tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">390</td><td class="d">14</td><td class="d">5 179 ₽</td><td class="d">1</td><td class="d">5 179 ₽</td></tr>'
-      +'<tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Платного трафика нет: заявки приходят из писем и органики"><span style="font-family:var(--mono);font-size:11.5px;color:var(--text-3)">вне Direct</span></td><td class="d">3</td><td class="d" title="CPL не считается: бюджета нет">—</td></tr>'
-      +'<tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">152 209</td><td class="d">846</td><td class="d">48 345 ₽</td><td class="d">10</td><td class="d">4 835 ₽</td></tr>',
+    week:'<tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">182 459</td><td class="d">313</td><td class="d">50 734 ₽</td><td class="d">4</td><td class="d">12 684 ₽</td></tr>'
+      +'<tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">321</td><td class="d">11</td><td class="d">3 144 ₽</td><td class="d">0</td><td class="d" title="Целевых нет — CPL не считается">—</td></tr>'
+      +'<tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct">—</td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct">—</td><td class="d" title="Платного трафика нет: заявки приходят из писем и органики"><span style="font-family:var(--mono);font-size:11.5px;color:var(--text-3)">вне Direct</span></td><td class="d">1</td><td class="d" title="CPL не считается: бюджета нет">—</td></tr>'
+      +'<tr style="background:var(--surface-2);font-weight:600"><td>Итого</td><td class="d">182 780</td><td class="d">324</td><td class="d">53 877 ₽</td><td class="d">5</td><td class="d">10 775 ₽</td></tr>',
     month:'<tr><td><span class="pill p-seq">Sequoia</span></td><td class="d">201 877</td><td class="d">1 651</td><td class="d">284 731 ₽</td><td class="d">35</td><td class="d">8 135 ₽</td></tr>'
       +'<tr><td><span class="pill p-ruq">Ruqi</span></td><td class="d">2 846</td><td class="d">185</td><td class="d">111 762 ₽</td><td class="d">16</td><td class="d">6 985 ₽</td></tr>'
       +'<tr><td><span class="pill p-spr">Solution PRO</span></td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет">—</td><td class="d" title="Платного трафика нет: заявки приходят из писем и органики"><span style="font-family:var(--mono);font-size:11.5px;color:var(--text-3)">вне Direct</span></td><td class="d">12</td><td class="d" title="CPL не считается: бюджета нет">—</td></tr>'
@@ -1294,13 +1406,14 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     {k:'w9',d:'12–18.10',t:14,di:5,se:6,extra:' · Email 3'},
     {k:'w10',d:'19–25.10',t:12,di:5,se:4,extra:' · Email 3'},
     {k:'w11',d:'26.10–01.11',t:14,di:7,se:5,extra:' · Email 2'},
-    {k:'w12',d:'02–08.11',t:10,di:5,se:2,extra:' · Email 3'}
+    {k:'w12',d:'02–08.11',t:10,di:5,se:2,extra:' · Email 3'},
+    {k:'w13',d:'09–15.11',t:5,di:1,se:1,extra:' · Email 3'}
   ];
   /* значения по сериям — от `TREND`, используются в ряде */
   TREND.all=TREND.map(function(p){return p.t;});
   TREND.dir=TREND.map(function(p){return p.di;});
   TREND.se=TREND.map(function(p){return p.se;});
-  /* ---------- единый тренд ЦЛ по проектам (11 недель, 3 ряда) ----------
+  /* ---------- единый тренд ЦЛ по проектам (12 недель, 3 ряда) ----------
      Один SVG, три ряда друг под другом. У каждого ряда своя шкала Y: факт — серые
      столбцы, тренд — цветная линия, зелёная пунктирная — «скользящая»
      на 3 недели. Наведите мышкой на любую точку — появится подсказка с
@@ -1309,9 +1422,10 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   function drawTrendViz(){
     var host=$('#ch-trend'); if(!host) return;
     host.innerHTML='';
-    var W=Math.max(560, host.clientWidth||840),
-        pad={t:72,r:30,b:50,l:50},
-        rowH=90, gap=30, rows=3,
+    var W=Math.max(320, host.clientWidth||840),
+        narrow=W<480,
+        pad=narrow?{t:26,r:16,b:46,l:34}:{t:72,r:30,b:50,l:50},
+        rowH=narrow?82:90, gap=narrow?26:30, rows=3,
         H=pad.t+rows*(rowH+gap)+pad.b,
         x0=pad.l, x1=W-pad.r;
     var N=TREND.length, dx=(x1-x0)/(N-1);
@@ -1322,7 +1436,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       {n:'SEO · органика',c:cssv('--ch-src'),d:TREND.se}
     ];
     var svg=el('svg',{class:'chart',viewBox:'0 0 '+W+' '+H,height:H,role:'img',
-      'aria-label':'Тренд ЦЛ за 11 недель. Три ряда: «Всего ЦЛ», «Директ · платный» и «SEO · органика». Зелёная пунктирная — скользящая на 3 недели.'});
+      'aria-label':'Тренд ЦЛ за 12 недель. Три ряда: «Всего ЦЛ», «Директ · платный» и «SEO · органика». Зелёная пунктирная — скользящая на 3 недели.'});
     /* вертикальная направляющая мыши (поверх всех рядов) */
     var gd=el('line',{x1:0,x2:0,y1:0,y2:H,stroke:cssv('--border'),'stroke-width':1,opacity:'0'});
     svg.appendChild(gd);
@@ -1412,6 +1526,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     }
     /* общая ось X */
     for(var t=0;t<N;t++){
+      if(narrow && t!==0 && t!==Math.floor(N/2) && t!==N-1) continue;
       var ta=t===N-1?'end':'middle';
       svg.appendChild(el('text',{x:t===N-1?x1:X(t),y:H-34,'text-anchor':ta,'font-size':'11','font-weight':'700',fill:cssv('--text-2')})).textContent=TREND[t].k;
       svg.appendChild(el('text',{x:t===N-1?x1:X(t),y:H-16,'text-anchor':ta,'font-size':'10','fill':cssv('--text-3')})).textContent=TREND[t].d;
@@ -1439,16 +1554,11 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   /* ---------- leads data ---------- */
   var LEADS_W=[
-    {d:'06.11',ts:'2026-11-06',name:'Заявка с почты – gazprombank.ru',contact:'gazprombank.ru',raw:'gazprombank.ru',meta:'письмо на почту · gazprombank.ru · мгновенная потребность',src:'Email',proj:'spr',projName:'Solution PRO',stage:'Закрыто и не реализовано'},
-    {d:'05.11',ts:'2026-11-05',name:'AryaHome (ООО «БИРИЗ ТЕКСТИЛЬ»)',contact:'форма sequoia-service.ru',raw:'sequoia-service.ru',meta:'sequoia-service.ru · Директ · старт 6 чел. · грузчик, комплектовщик',src:'Директ',proj:'seq',projName:'Секвойя',stage:'КП выставлено'},
-    {d:'05.11',ts:'2026-11-05',name:'Рэмос (ООО «РЭМОСАЛЬЯНС»)',contact:'+7 (495) 796-20-70',raw:'+74957962070',meta:'входящий звонок · колл-центр · sequoia-service.ru · дубль: письмо на почту',src:'SEO',proj:'seq',projName:'Секвойя',stage:'КП выставлено'},
-    {d:'04.11',ts:'2026-11-04',name:'Авангард, Патриот',contact:'форма sequoia-service.ru',raw:'sequoia-service.ru',meta:'sequoia-service.ru · обращение с сайта · форма без utm-меток',src:'Директ',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
-    {d:'03.11',ts:'2026-11-03',name:'Тендер МТС',contact:'mvmor013@mtsretail.ru',raw:'mvmor013@mtsretail.ru',meta:'письмо на почту · mtsretail.ru · сайт сделки s-pro.group',src:'Email',proj:'spr',projName:'Solution PRO',stage:'Взял в работу'},
-    {d:'03.11',ts:'2026-11-03',name:'Заявка с сайта sequoia-service.ru – Zvonok',contact:'форма sequoia-service.ru',raw:'sequoia-service.ru',meta:'sequoia-service.ru · Calltouch · utm_campaign=703157688 (РСЯ)',src:'Директ',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
-    {d:'03.11',ts:'2026-11-03',name:'Заявка с сайта sequoia-service.ru – Попок',contact:'форма sequoia-service.ru',raw:'sequoia-service.ru',meta:'sequoia-service.ru · форма без utm-меток',src:'Директ',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
-    {d:'02.11',ts:'2026-11-02',name:'Новотранс (ПАО «Новотранс»)',contact:'колл-центр',raw:'—',meta:'входящий звонок · колл-центр · старт 11 чел. · грузчик',src:'SEO',proj:'seq',projName:'Секвойя',stage:'КП выставлено'},
-    {d:'02.11',ts:'2026-11-02',name:'Традиции Вкуса (ООО «Традиции вкуса»)',contact:'форма ruqi.ru',raw:'ruqi.ru',meta:'ruqi-pro.ru · eLama · «Аренда персонала. Поиск. Москва и МО»',src:'Директ',proj:'ruq',projName:'Руки',stage:'Закрыто и не реализовано'},
-    {d:'02.11',ts:'2026-11-02',name:'ООО «ФУДМАРКЕТ ЦЕНТР»',contact:'почта',raw:'—',meta:'письмо на почту · местный (подработка)',src:'Email',proj:'spr',projName:'Solution PRO',stage:'Потребности выявлены'}
+    {d:'13.11',ts:'2026-11-13',name:'Заявка с почты – russianpost.ru',contact:'anna.grigorkina@russianpost.ru',raw:'anna.grigorkina@russianpost.ru',meta:'письмо · russianpost.ru · «уже работаем с клиентом» · проект Секвойя (решение владельца 16.11)',src:'Email',proj:'seq',projName:'Секвойя',stage:'Закрыто и не реализовано'},
+    {d:'11.11',ts:'2026-11-11',name:'Почта России',contact:'почта',raw:'s-pro.group',meta:'письмо · «Запрос ценовой информации от АО «Почта России»» · сайт заявки s-pro.group · вахта, Marketplace',src:'Email',proj:'spr',projName:'Solution PRO',stage:'Потребности выявлены'},
+    {d:'10.11',ts:'2026-11-10',name:'ООО Дистрибьюторская компания МИКС',contact:'форма lidmagnit',raw:'sequoia-service.ru',meta:'форма · кампания «cold» · utm_medium=3 · ИНН 7709252314 · вахта, комплектовщик, старт 5 чел.',src:'Директ',proj:'seq',projName:'Секвойя',stage:'КП выставлено',sum:1452000},
+    {d:'10.11',ts:'2026-11-10',name:'ООО Глобал транс',contact:'+7 (495) 150-51-51',raw:'+74951505151',meta:'входящий звонок · Колл-центр · сайт не определён · проект Секвойя (решение владельца 16.11)',src:'SEO',proj:'seq',projName:'Секвойя',stage:'Контакт с ЛПР установлен'},
+    {d:'09.11',ts:'2026-11-09',name:'ООО БЕРГ ХОЛДИНГ',contact:'почта',raw:'—',meta:'письмо · «Запрос коммерческого предложения» · ИНН 7723709698 · вахта, комплектовщик, старт 20 чел.',src:'Email',proj:'seq',projName:'Секвойя',stage:'КП выставлено',sum:5119400}
   ];
   var LEADS_M=[
     {d:"30.10",ts:"2026-10-30",name:"Camillamed (ООО «КАМИЛЛАМЕД»)",contact:"+7 (903) 572-06-84",raw:"+79035720684",meta:"входящий звонок · колл-центр · сайт s-pro.group · старт 10 чел.",src:"SEO",proj:"spr",projName:"Solution PRO",stage:"Заявка получена",sum:1989900,crm:"https://crm.sequoia-service.ru/deals/01m662d5vt7qxmk73e0rn443qc"},
@@ -1593,7 +1703,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   }
   function funnelFx(grid,bar,sub,rows,signed,total){
     if(sub) sub.textContent=total+' '+plural(total,'сделка','сделки','сделок')+' периода · доля внутри периода'
-      +(signed.length?' · факт подписания — отдельно':'')+' · статус в CRM на 09.11.2026';
+      +(signed.length?' · факт подписания — отдельно':'')+' · статус в CRM на 16.11.2026';
     [].forEach.call(grid.querySelectorAll('.fn-pc'),function(el,i){
       animatePc(el,'f'+i,+el.dataset.pc);
     });
@@ -1625,7 +1735,10 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       {n:'Видконди (местный)',sum:826540,crm:'https://crm.sequoia-service.ru/deals/01m2g119rbsxe3fz8w88saqfqk'}
     ]},
     {p:'m10',lbl:'Октябрь',sub:'01.10 – 31.10',signedSum:6200040,signed:3},
-    {p:'p6',lbl:'Ноябрь',sub:'02.11 – 08.11',signedSum:0,signed:0,open:true}
+    {p:'nov',lbl:'Ноябрь',sub:'01.11 – 15.11',signedSum:0,signed:0,open:true,deals:[
+      {n:'ООО Дистрибьюторская компания МИКС',sum:1452000},
+      {n:'ООО БЕРГ ХОЛДИНГ',sum:5119400}
+    ]}
   ];
   function renderMoney(){
     var list=$('#money-months'), ch=$('#money-channels'), eff=$('#money-eff'), note=$('#money-note');
@@ -1858,6 +1971,12 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     p6:{tab:'w',ix:'w12',h1:'2 – 8 ноября 2026',dates:'02.11 – 08.11',lbl:'02–08.11',leads:10,spend:48345,cpl:4835,conv:1.18,allleads:188,prev:'p5',chip:'ЦЛ 10',
       note:'10 ЦЛ, 48 345 ₽, CPL 4 835 ₽; Директ 5 / SEO 2 / Email 3. Лидов всего — 188. Два дня без открутки: 04.11 и 08.11. Период этого отчёта — значения по умолчанию.',
       text:'02.11 08.11 ноябрь w12'},
+    p7:{tab:'w',ix:'w13',h1:'9 – 15 ноября 2026',dates:'09.11 – 15.11',lbl:'09–15.11',leads:5,spend:53877,cpl:10775,conv:6.17,allleads:173,prev:'p6',chip:'ЦЛ 5',
+      note:'5 ЦЛ, 53 877 ₽, CPL 10 775 ₽; Директ 1 / SEO 1 / Email 3. Лидов всего — 173. Дни без открутки: 10.11 и 15.11; 14.11 — 20 показов и 1 864 ₽. Период этого отчёта — значения по умолчанию.',
+      text:'09.11 15.11 ноябрь w13'},
+    nov:{tab:'m',ix:'нояб',h1:'Ноябрь 2026 (MTD)',dates:'01.11 – 15.11',lbl:'ноябрь',leads:15,spend:104381,cpl:6959,conv:1.25,clicks:1199,impr:353483,prev:'m10',chip:'ЦЛ 15',
+      note:'Ноябрь MTD 01–15.11: 15 целевых (CRM, тег «Целевой»), 104 381 ₽ и 1 199 кликов Директа, CPL 6 959 ₽, конверсия 1,25%. План месяца — 70 ЦЛ, контрольная точка 15.11 — 34.',
+      text:'ноябрь 2026 MTD 01.11 15.11'},
     pall:{tab:'w',ix:'всё',h1:'1 октября – 1 ноября 2026',dates:'01.10 – 01.11',lbl:'01.10–01.11',leads:63,spend:396494,cpl:6294,conv:3.43,clicks:1836,impr:204723,prev:'m09',chip:'ЦЛ 63',
       note:'Итого 01.10–01.11: 63 ЦЛ (CRM), 396 494 ₽ и 1 836 кликов Директа, CPL 6 294 ₽, конверсия 3,43%. Сравнение — с сентябрём по той же базе Директа.',
       text:'всё весь итог октябрь месяц 01.10 01.11'},
@@ -1865,8 +1984,8 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       note:'Октябрь: 63 ЦЛ (CRM, тег «Целевой», созданные 01.10–31.10), 396 494 ₽ и 1 836 кликов — Директ API за 01.10–01.11 (в выгрузку попал и день 01.11). CPL 6 294 ₽, конверсия 3,43%. Сверено повторной выгрузкой 02.11: в таблице — свежие суммы по аккаунтам.',
       text:'окт октябрь месяц 01.10 31.10 важно'},
   };
-  var ORDER=['aug1','aug2','aug3','sep1','sep2','sep3','p1','p2','p3','p4','p5','p6','pall','m09','m10'];
-  var current='p6';
+  var ORDER=['aug1','aug2','aug3','sep1','sep2','sep3','p1','p2','p3','p4','p5','p6','p7','pall','m09','m10'];
+  var current='p7';
   var ARROWS={
     up:'<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10V2M6 2L2.5 5.5M6 2l3.5 3.5"/></svg>',
     down:'<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M6 10l3.5-3.5M6 10L2.5 6.5"/></svg>'
@@ -1881,7 +2000,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     conv:{get:function(d){return d.conv;}, text:fmtPctTo, inv:true, pp:true, holdNote:''},
     allleads:{get:function(d){return d.allleads;}, text:fmtInt, holdNote:function(d){return 'из них '+fmtInt(d.leads)+' целевых';}}
   };
-  [['kv-leads','10'],['kv-cpl','4835'],['kv-spend','48345'],['kv-conv','1.18'],['kv-allleads','188']].forEach(function(p){
+  [['kv-leads','5'],['kv-cpl','10775'],['kv-spend','53877'],['kv-conv','6.17'],['kv-allleads','173']].forEach(function(p){
     var e=document.getElementById(p[0]); if(e) e.setAttribute('data-cur',p[1]);
   });
 
@@ -1953,6 +2072,8 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
         seq:['7','50%'],ruq:['3','21,4%'],spr:['4','28,6%'],x:null,note:null},
     p6:{dir:5,dirPct:'50%',dirCpl:'9 669 ₽ за ЦЛ',seo:2,seoPct:'20%',mail:3,mailPct:'30%',
         seq:['6','60%'],ruq:['1','10%'],spr:['3','30%'],x:null,note:null},
+    p7:{dir:1,dirPct:'20%',dirCpl:'53 877 ₽ за ЦЛ',seo:1,seoPct:'20%',mail:3,mailPct:'60%',
+        seq:['4','80%'],ruq:['0','0%'],spr:['1','20%'],x:null,note:null},
     m10:SPLIT_MONTH, pall:SPLIT_MONTH
   };
   function updSplit(pid){
@@ -1977,24 +2098,24 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
 
   /* Источники / Проекты / Лиды: переключение наборов данных по периоду */
   var TXT={
-    week:{srcCap:'10 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу',
-      srcCall:'<b>Директ дал 5 из 10 целевых</b> при бюджете 48,3 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">9,7 тыс. ₽</b> (48 345 / 5). Общая цена целевого лида всех каналов — 4 835 ₽.',
-      projCap:'43 166 ₽ на Секвойю (6 ЦЛ) · 5 179 ₽ на Руки (1 ЦЛ) · Solution PRO — 3 целевых без рекламного бюджета',
-      projSub:'Показы и клики — из выгрузки Яндекс.Директ API за 02.11–08.11',
+    week:{srcCap:'5 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу',
+      srcCall:'<b>Директ дал 1 из 5 целевых</b> при бюджете 53,9 тыс. ₽. Расходы на один целевой лид Директа — <b class="mono">53,9 тыс. ₽</b> (53 877 / 1). Общая цена целевого лида всех каналов — 10 775 ₽.',
+      projCap:'50 734 ₽ на Секвойю (4 ЦЛ) · 3 144 ₽ на Руки (0 ЦЛ) · Solution PRO — 1 целевая без рекламного бюджета',
+      projSub:'Показы и клики — из выгрузки Яндекс.Директ API за 09.11–15.11',
       projFoot:'',
-      projCall:'<b>Solution PRO — 3 целевых при нулевом бюджете.</b> Три письма (МТС, Газпромбанк, Фудмаркет): домен не входит в отслеживаемые аккаунты Direct, поэтому расхода и CPL по нему нет.',
-      leadsSub:'10 сделок с тегом «Целевой», созданных 02.11–08.11. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 09.11.2026.',
-      leadsCap:'Целевые лиды за 2 – 8 ноября 2026',
-      periodNote:'Сделки, созданные 02.11–08.11.2026 · этап — текущий статус в CRM на 09.11.2026, а не результат периода; факт недели — количество, каналы и бюджет'},
+      projCall:'<b>Solution PRO — 1 целевая при нулевом бюджете.</b> Письмо на s-pro.group (Почта России): домен не входит в отслеживаемые аккаунты Direct, поэтому расхода и CPL по нему нет. У «Руки» неделя без целевых: 11 кликов и 3 144 ₽ ушли вхолостую.',
+      leadsSub:'5 сделок с тегом «Целевой», созданных 09.11–15.11. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 16.11.2026.',
+      leadsCap:'Целевые лиды за 9 – 15 ноября 2026',
+      periodNote:'Сделки, созданные 09.11–15.11.2026 · этап — текущий статус в CRM на 16.11.2026, а не результат периода; факт недели — количество, каналы и бюджет'},
     month:{srcCap:'63 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу',
       srcCall:'<b>Директ дал 38 из 63 целевых</b> при бюджете 396,5 тыс. ₽. Расходы на один целевой лид Директа — около <b class="mono">10,4 тыс. ₽</b> (396 494 / 38). Общая цена целевого лида всех каналов — 6 294 ₽.',
       projCap:'63 целевых: Секвойя 35 (284 731 ₽) · Руки 16 (111 762 ₽) · Solution PRO 12 (без бюджета)',
       projSub:'Показы и клики — Директ API за 01.10–01.11 по аккаунтам · ЦЛ — CRM (тег «Целевой») · строки округлены до рубля, итог — по неокруглённым суммам (расхождение до 1 ₽)',
       projFoot:'Конверсии Метрики по аккаунтам — 213 (Секвойя) и 20 (Руки): это все срабатывания целей, включая повторные и нецелевые обращения. ЦЛ считаются только по сделкам CRM с тегом «Целевой», поэтому 35 ≠ 213 и 16 ≠ 20.',
       projCall:'<b>Solution PRO — 12 целевых при нулевом бюджете.</b> Четыре письма, три заявки с форм s-pro.group по Директу и пять обращений из органики (звонки и формы): домен не входит в отслеживаемые аккаунты. Цена целевого лида по аккаунтам: Секвойя 8 135 ₽, Руки 6 985 ₽.',
-      leadsSub:'63 сделки с тегом «Целевой», созданные 01.10–31.10. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 09.11.2026.',
+      leadsSub:'63 сделки с тегом «Целевой», созданные 01.10–31.10. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 16.11.2026.',
       leadsCap:'Целевые лиды за октябрь 2026',
-      periodNote:'Сделки, созданные 01.10–31.10.2026 · этап — текущий статус в CRM на 09.11.2026, а не результат октября; факт периода — количество, каналы и бюджет · «Успешно реализовано» = касание сентября, в воронку октября не входит'}
+      periodNote:'Сделки, созданные 01.10–31.10.2026 · этап — текущий статус в CRM на 16.11.2026, а не результат октября; факт периода — количество, каналы и бюджет · «Успешно реализовано» = касание сентября, в воронку октября не входит'}
   };
   function setTxt(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
   function setHtml(id,v){ var e=document.getElementById(id); if(e) e.innerHTML=v; }
@@ -2016,7 +2137,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
       var isAll=(o.dataset.proj==='all'||o.dataset.src==='all');
       o.setAttribute('aria-pressed', isAll?'true':'false');
     });
-    var C={seq:(m?35:6),ruq:(m?16:1),spr:(m?12:3),x:0,dir:(m?38:5),seo:(m?16:2),mail:(m?9:3)};
+    var C={seq:(m?35:4),ruq:(m?16:0),spr:(m?12:1),x:0,dir:(m?38:1),seo:(m?16:1),mail:(m?9:3)};
     setTxt('cnt-all',LEADS.length); setTxt('cnt-seq',C.seq); setTxt('cnt-ruq',C.ruq); setTxt('cnt-spr',C.spr); setTxt('cnt-x',C.x);
     setTxt('cnt-dir',C.dir); setTxt('cnt-seo',C.seo); setTxt('cnt-mail',C.mail);
     var x=document.getElementById('chip-x'); if(x){ x.hidden=!(C.x>0); x.style.display=C.x>0?'':'none'; }
@@ -2026,7 +2147,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     applySep(pid==='m09');
   }
 
-  var OCT_SET={p1:1,p2:1,p3:1,p4:1,p5:1,pall:1,m10:1};
+  var OCT_SET={p1:1,p2:1,p3:1,p4:1,p5:1,p6:1,p7:1,pall:1,m10:1};
   function setPeriod(p){
     current=p; var d=P[p], pd=d.prev?P[d.prev]:null;
     var isMonth = d.tab==='m';
@@ -2034,7 +2155,6 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     document.title='Отчёт '+d.h1+' — интерактивная версия';
     $('#yperDates').textContent=d.dates; $('#yperIx').textContent=d.ix;
     $('#vsPrev').textContent=pd?('vs '+pd.lbl):'—';
-    var eb=$('#eyebrow'); if(eb) eb.textContent='Рекламная кампания · '+(isMonth?'месяц к месяцу':'неделя к неделе');
     setTxt('brandDates','Отчёт '+d.lbl);
     setTxt('footPeriod','Отчёт по рекламной кампании · '+(isMonth? d.lbl+' 2026' : d.lbl+'.2026'));
     setTxt('navwow',isMonth?'Месяц к месяцу':'Неделя к неделе');
@@ -2048,7 +2168,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
     updSplit(p);
     updSrcProj(p); setLeads(p); markMoney(p);
     updCmp(p);
-    var hint=$('#sliceHint'); if(hint) hint.hidden=!!(p==='p5'||p==='p6'||p==='m10'||p==='pall');
+    var hint=$('#sliceHint'); if(hint) hint.hidden=!!(p==='p5'||p==='p6'||p==='p7'||p==='m10'||p==='pall');
     setTxt('baseCompare', pd ? ('База сравнения: '+pd.lbl+' ('+fmtInt(pd.leads)+' ЦЛ, '+fmtRub(pd.spend)+')') : 'База сравнения: не задана');
     var lv=$('#live'); if(lv) lv.textContent='Период: '+d.dates+'. '+d.note;
   }
@@ -2111,11 +2231,31 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .5s cubic-
   });
 
   /* ---------- init ---------- */
+  function markScroll(){
+    var ws=document.querySelectorAll('.tbl-wrap');
+    for(var i=0;i<ws.length;i++){
+      var w=ws[i];
+      var can=w.scrollWidth>w.clientWidth+1;
+      w.classList.toggle('is-scroll',can);
+      if(can){
+        if(!w.__scrollBound){
+          w.__scrollBound=true;
+          w.addEventListener('scroll',function(){
+            this.classList.toggle('at-end',this.scrollLeft+this.clientWidth>=this.scrollWidth-2);
+          },{passive:true});
+        }
+        w.classList.toggle('at-end',w.scrollLeft+w.clientWidth>=w.scrollWidth-2);
+      } else {
+        w.classList.remove('at-end');
+      }
+    }
+  }
   var rt=null;
-  window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(drawAll,180); });
+  window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ drawAll(); markScroll(); },180); });
   document.addEventListener('visibilitychange',function(){ if(!document.hidden) finalizeCards(); });
   WEEK_TABLE = $('#cmp-body') ? $('#cmp-body').innerHTML : null;
   drawAll(); render(); renderMoney(); observeAll();
+  markScroll();
 })();
 </script>
 <script>(function(){var B=(document.querySelector('meta[name="build"]')||{}).content||'';if(!B||location.protocol==='file:')return;function chk(){if(document.hidden)return;var k='bchk:'+B;try{if(sessionStorage.getItem(k))return;}catch(e){}fetch(location.pathname+'?_b='+Date.now(),{cache:'no-store'}).then(function(r){return r.text();}).then(function(t){var m=t.match(/name="build" content="([^"]+)"/);if(!m||m[1]===B)return;try{sessionStorage.setItem(k,'1');}catch(e){}location.replace(location.pathname+'?v='+encodeURIComponent(m[1])+location.hash);}).catch(function(){});}if(document.readyState==='complete')setTimeout(chk,1200);else window.addEventListener('load',function(){setTimeout(chk,1200);});document.addEventListener('visibilitychange',function(){if(!document.hidden)setTimeout(chk,600);});})();</script>
