@@ -1789,8 +1789,10 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
       var withDeals=MONEY.filter(function(m){ return m.deals; });
       dealsEl.innerHTML=withDeals.map(function(m){
         return '<span>'+m.lbl+':</span>'+m.deals.map(function(d){
-          return '<a class="mm-deal" href="'+d.crm+'" target="_blank" rel="noopener noreferrer" title="Карточка в CRM">'+d.n
-            +'<b>'+fmt(d.sum)+' ₽</b></a>';
+          return (d.crm
+            ? '<a class="mm-deal" href="'+d.crm+'" target="_blank" rel="noopener noreferrer" title="Карточка в CRM">'
+            : '<span class="mm-deal" title="Сумма из карточки CRM, ссылка не передана">')
+            + d.n + '<b>'+fmt(d.sum)+' ₽</b>' + (d.crm ? '</a>' : '</span>');
         }).join('');
       }).join('');
     }
@@ -2153,7 +2155,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     applySep(pid==='m09');
   }
 
-  var OCT_SET={p1:1,p2:1,p3:1,p4:1,p5:1,p6:1,p7:1,pall:1,m10:1};
+  var OCT_SET={p1:1,p2:1,p3:1,p4:1,p5:1,p6:1,pall:1,m10:1};
   function setPeriod(p){
     current=p; var d=P[p], pd=d.prev?P[d.prev]:null;
     var isMonth = d.tab==='m';
@@ -2164,7 +2166,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     setTxt('brandDates','Отчёт '+d.lbl);
     setTxt('footPeriod','Отчёт по рекламной кампании · '+(isMonth? d.lbl+' 2026' : d.lbl+'.2026'));
     setTxt('navwow',isMonth?'Месяц к месяцу':'Неделя к неделе');
-    var rb=$('#ringBox'); if(rb) rb.style.display=OCT_SET[p]?'':'none';
+    var rb=$('#ringBox'); if(rb) rb.style.display='flex';
     var ms=$('#month'); if(ms) ms.style.display=OCT_SET[p]?'':'none';
     var nm=$('#navmonth'); if(nm) nm.style.display=OCT_SET[p]?'':'none';
     var tl=$('#t-leads'); if(tl) tl.textContent=fmtInt(d.leads);
@@ -2260,7 +2262,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
   window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ drawAll(); markScroll(); },180); });
   document.addEventListener('visibilitychange',function(){ if(!document.hidden) finalizeCards(); });
   WEEK_TABLE = $('#cmp-body') ? $('#cmp-body').innerHTML : null;
-  drawAll(); render(); renderMoney(); observeAll();
+  drawAll(); render(); renderMoney(); setPeriod(current); observeAll();
+  /* страховка: если IntersectionObserver не сработал — показать всё */
+  setTimeout(function(){ var els=document.querySelectorAll('.reveal'); for(var i=0;i<els.length;i++){ els[i].classList.add('in'); } }, 700);
   markScroll();
 })();
 </script>
