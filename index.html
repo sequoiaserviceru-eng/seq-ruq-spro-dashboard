@@ -6,7 +6,7 @@
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="yandex" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-23T10:00Z"><meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-23T11:55Z"><meta http-equiv="cache-control" content="no-cache">
 <title>Отчёт 16 – 22 ноября 2026 — интерактивная версия</title>
 <meta name="color-scheme" content="light">
 <style>
@@ -640,7 +640,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
         <div class="yper-note" id="yperNote"></div>
         <div class="yper-fast">
           <span class="fl">Быстрый</span>
-          <button type="button" data-fast="p6">Последняя</button>
+          <button type="button" data-fast="p8">Последняя</button>
           <button type="button" data-fast="aug1">Первая</button>
           <button type="button" data-fast="pall">Всё</button>
         </div>
@@ -671,12 +671,12 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
         <span class="tag">CPL <b id="t-cpl">6 779 ₽</b></span>
         <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>16.11–22.11</b></span>
         <span class="tag">Сформировано <b>23.11.2026</b></span>
-        <span class="tag">Сборка <b id="buildStamp">23.11 10:00</b></span>
+        <span class="tag">Сборка <b id="buildStamp">23.11 11:55</b></span>
       </div>
     </div>
     <div class="ring-box" id="ringBox" style="display:none">
       <div id="ring"></div>
-      <p class="ring-cap">Ноябрь: <b class="mono">25</b> целевых из <b class="mono">70</b> по плану (36%) · контрольная точка 15.11 — 34 ЦЛ, факт 74% точки · план медиаплана от 03.11</p>
+      <p class="ring-cap">Ноябрь: <b class="mono">25</b> целевых из <b class="mono">70</b> по плану (36%) · контрольная точка 22.11 — <b class="mono">52</b> ЦЛ, выполнение 48% · план медиаплана от 03.11.2026</p>
     </div>
   </header>
 
@@ -769,36 +769,86 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
   </section>
 
   <section id="month" style="display:none">
-    <div class="sec-head">
-      <h2>Октябрь: итог</h2>
-      <p class="sub">Октябрь закрыт: 63 целевых из 65 (97%) при 396 494 ₽. Ноябрь идёт: <b class="mono">25</b> целевых за 01–22.11 из <b class="mono">70</b> по плану (36%), бюджет медиаплана — 480 000 ₽, контрольная точка 15.11 — 34 ЦЛ (факт 74% точки). Расход ноября — 170 013 ₽ за 01–22.11.</p>
+    <div id="month-oct">
+      <div class="sec-head">
+        <h2>Октябрь: итог</h2>
+        <p class="sub">Октябрь закрыт: 63 целевых из 65 (97%) при 396 494 ₽ за 01.10–01.11 — 107,2% бюджета плана 370 000 ₽ (в окно выгрузки попал один день ноября). Это итог закрытого месяца; ноябрьская динамика — в отдельной плитке «Ноябрь», она показывается при выборе ноябрьских периодов.</p>
+      </div>
+      <div class="grid-2">
+        <div class="panel reveal">
+          <div class="panel-t">Накопленные целевые по неделям</div>
+          <div class="panel-s">Факт против плановой траектории · 04.10 → 31.10</div>
+          <div id="ch-month"></div>
+          <div class="legend">
+            <span><i class="sw line" style="background:var(--primary)"></i>Факт, накопленным итогом</span>
+            <span><i class="sw line" style="background:var(--accent)"></i>План 65 ЦЛ (пересмотрен 26.10, было 35)</span>
+          </div>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-t">Недели октября</div>
+          <div class="panel-s">Целевые и доля месячного плана</div>
+          <div class="stats" id="wk-stats"></div>
+          <div class="callout blue">
+            <b>Октябрь закрыт на 97% плана:</b> <b class="mono">63</b> из <b class="mono">65</b>, недобор — 2 ЦЛ. Бюджет по Директу — 396 494 ₽ за 01.10–01.11: 107,2% плана 370 000 ₽ (окно на день длиннее месяца).
+          </div>
+          <div class="callout amber">
+            <b>Итог месяца и недельные бюджеты сходятся не до рубля — так и должно быть:</b> 396 494 ₽ — повторная выгрузка Директа 02.11 за 01.10–01.11; суммы в карточках недель — из недельных отчётов, с округлениями и без дня 01.11. Для месяца верна цифра 396 494 ₽.
+          </div>
+          <div class="cor-block">
+            <div class="panel-t" style="margin-top:18px">Идём ли в коридоре? · итог на 31.10 ± 10%</div>
+            <div id="ch-corridor"></div>
+            <p class="note" style="margin-top:10px">Полоса — коридор ±10% (±10 п.п.); вертикаль — плановая отметка на конец месяца (100%). ЦЛ: 63 из 65 — 96,9% плана на 100% срока — в коридоре; бюджет — 396 494 ₽ — 107,2% месячного плана — в коридоре.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="grid-2">
-      <div class="panel reveal">
-        <div class="panel-t">Накопленные целевые по неделям</div>
-        <div class="panel-s">Факт против плановой траектории · 04.10 → 31.10</div>
-        <div id="ch-month"></div>
-        <div class="legend">
-          <span><i class="sw line" style="background:var(--primary)"></i>Факт, накопленным итогом</span>
-          <span><i class="sw line" style="background:var(--accent)"></i>План 65 ЦЛ (пересмотрен 26.10, было 35)</span>
+
+    <div id="month-nov" style="display:none">
+      <div class="sec-head">
+        <h2>Ноябрь: месяц идёт</h2>
+        <p class="sub">Данные на 22.11.2026: <b>25</b> целевых из <b>70</b> по плану (36% при 73% срока). Контрольная точка 22.11 по медиаплану — <b>52</b> ЦЛ, выполнение 48% (−27 ЦЛ). Бюджет — <b>170 012 ₽</b> из 480 000 ₽ (35%). Отчёт недели 16–22.11 — в шапке периода выше.</p>
+      </div>
+      <div class="grid-2">
+        <div class="panel reveal">
+          <div class="panel-t">Накопленные целевые по неделям</div>
+          <div class="panel-s">Факт против плановой траектории · 08.11 → 30.11</div>
+          <div id="ch-month-nov"></div>
+          <div class="legend">
+            <span><i class="sw line" style="background:var(--primary)"></i>Факт, накопленным итогом</span>
+            <span><i class="sw line" style="background:var(--accent)"></i>План 70 ЦЛ (чек-поинты 18 / 34 / 52)</span>
+          </div>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-t">Недели ноября</div>
+          <div class="panel-s">Целевые и доля месячного плана</div>
+          <div class="stats" id="wk-stats-nov"></div>
+          <div class="callout blue">
+            <b>Ноябрь идёт на 36% плана:</b> 25 из 70 за 22 дня. Отставание от чек-поинта 22.11 — 27 ЦЛ; неделя 16–22.11 дала 10 — вдвое больше предыдущей (5).
+          </div>
+          <div class="callout amber">
+            <b>Экономика хуже октября:</b> CPL 6 800 ₽ против 6 294 ₽ (+8%), конверсия 1,95% против 3,43% — 1 282 клика ноября дали 25 ЦЛ. Освоено 170 012 ₽ из 480 000 ₽ (35%).
+          </div>
+          <div class="tbl-wrap" style="margin-top:16px">
+            <table style="min-width:0">
+              <thead><tr><th>Контрольная точка</th><th style="text-align:right">план, ЦЛ</th><th style="text-align:right">факт, ЦЛ</th><th style="text-align:right">Δ</th></tr></thead>
+              <tbody>
+                <tr><td>08.11</td><td class="d" style="text-align:right">18</td><td class="d" style="text-align:right">10</td><td class="d" style="text-align:right;color:var(--neg)">−8</td></tr>
+                <tr><td>15.11</td><td class="d" style="text-align:right">34</td><td class="d" style="text-align:right">15</td><td class="d" style="text-align:right;color:var(--neg)">−19</td></tr>
+                <tr><td>22.11</td><td class="d" style="text-align:right">52</td><td class="d" style="text-align:right"><b>25</b></td><td class="d" style="text-align:right;color:var(--neg)">−27</td></tr>
+                <tr><td>30.11</td><td class="d" style="text-align:right">70</td><td class="d" style="text-align:right">—</td><td class="d" style="text-align:right">—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note" style="margin-top:10px">Чек-поинты — из медиаплана ноября от 03.11.2026. Факт — CRM, тег «Целевой», сделки, созданные 01.11–22.11.</p>
         </div>
       </div>
-      <div class="panel reveal">
-        <div class="panel-t">Недели октября</div>
-        <div class="panel-s">Целевые и доля месячного плана</div>
-        <div class="stats" id="wk-stats"></div>
-        <div class="callout blue">
-          <b>Октябрь закрыт на 97% плана:</b> <b class="mono">63</b> из <b class="mono">65</b>, недобор — 2 ЦЛ. Бюджет по Директу — 396 494 ₽ за 01.10–01.11: 107,2% плана 370 000 ₽ (окно на день длиннее месяца).
-        </div>
-        <div class="callout amber">
-          <b>Ноябрь — план 70 ЦЛ, отставание сокращается.</b> К 22.11 накоплено 25 целевых из 70 (36%) против контрольных 34 на 15.11. Неделя 16–22.11 дала 10 целевых из 243 обращений — вдвое больше предыдущей недели (5) при росте бюджета на 26%.
-        </div>
-        <div class="cor-block">
-          <div class="panel-t" style="margin-top:18px">Идём ли в коридоре? · итог на 31.10 ± 10%</div>
-          <div id="ch-corridor"></div>
-          <p class="note" style="margin-top:10px">Полоса — коридор ±10% (±10 п.п.); вертикаль — плановая отметка на конец месяца (100%). ЦЛ: 63 из 65 — 96,9% плана на 100% срока — в коридоре; бюджет — 396 494 ₽ — 107,2% месячного плана — в коридоре.</p>
-        </div>
-      </div>
+    </div>
+  </section>
+
+  <section id="nodetail" style="display:none">
+    <div class="panel">
+      <div class="panel-t">Детализация есть не для каждого периода</div>
+      <p class="sub" style="margin:8px 0 0">Источники, расход по проектам, список сделок и сравнение «неделя к неделе» собраны для периода этого отчёта — <b>16–22.11.2026</b> — и для месячных срезов: <b>октябрь 2026</b> и <b>01.10–01.11</b>. Для выбранного периода таких данных нет, поэтому показаны только KPI, тренд по 13 неделям и месячная динамика. Выберите 16–22.11.2026 или октябрь.</p>
     </div>
   </section>
 
@@ -1048,7 +1098,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
 
   <footer>
     <span id="footPeriod">Отчёт по рекламной кампании · 16–22.11.2026</span>
-    <span>Сформировано 23.11.2026 · интерактивная версия · сборка <b id="buildStamp2">23.11 10:00</b> UTC</span>
+    <span>Сформировано 23.11.2026 · интерактивная версия · сборка <b id="buildStamp2">23.11 11:55</b> UTC</span>
     <span id="baseCompare">База сравнения: 09–15.11 (5 ЦЛ, 53 877 ₽)</span>
   </footer>
 </div>
@@ -1198,6 +1248,80 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     tot.appendChild(tl); tot.appendChild(tv); host.appendChild(tot);
   }
 
+  /* ноябрьский блок месяца: факт против чек-поинтов медиаплана 03.11 */
+  var MONTH_NOV={points:[{x:'08.11',y:10},{x:'15.11',y:15},{x:'22.11',y:25},{x:'30.11',y:null}],
+    plan:[18,34,52,70],max:70};
+  function drawMonthNov(){
+    var host=$('#ch-month-nov'); if(!host) return;
+    host.innerHTML='';
+    var W=Math.max(420,host.clientWidth||520), H=250, m={t:18,r:18,b:34,l:40};
+    var iw=W-m.l-m.r, ih=H-m.t-m.b, max=nice(MONTH_NOV.max), n=MONTH_NOV.points.length;
+    var X=function(i){ return m.l + (i/(n-1))*iw; };
+    var Y=function(v){ return m.t + ih - (v/max)*ih; };
+    var svg=el('svg',{class:'chart',viewBox:'0 0 '+W+' '+H,height:H,role:'img',
+      'aria-label':'Накопленные целевые ноября: 10 к 8 ноября, 15 к 15 ноября, 25 к 22 ноября при плане 70; чек-поинты 18, 34 и 52'});
+    [0,.25,.5,.75,1].forEach(function(f){
+      var v=max*f, y=Y(v);
+      svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:y,y2:y,class:'grid-l'}));
+      var tx=el('text',{x:m.l-9,y:y+4,'text-anchor':'end'}); tx.textContent=Math.round(v); svg.appendChild(tx);
+    });
+    var pd='';
+    MONTH_NOV.plan.forEach(function(v,i){ pd+=(i===0?'M':'L')+X(i).toFixed(1)+' '+Y(v).toFixed(1)+' '; });
+    svg.appendChild(el('path',{d:pd,fill:'none',stroke:cssv('--accent'),'stroke-width':'2','stroke-dasharray':'6 5','stroke-linejoin':'round'}));
+    MONTH_NOV.plan.forEach(function(v,i){
+      svg.appendChild(el('circle',{cx:X(i),cy:Y(v),r:3.5,fill:cssv('--surface'),stroke:cssv('--accent'),'stroke-width':'2'}));
+      var t=el('text',{x:X(i),y:Y(v)-9,'text-anchor':'middle',fill:cssv('--accent'),'font-size':'10.5','font-weight':'600'});
+      t.textContent=v; svg.appendChild(t);
+    });
+    var d='', last=0, started=false;
+    MONTH_NOV.points.forEach(function(p,i){
+      if(p.y===null) return;
+      d+=(started?'L':'M')+X(i).toFixed(1)+' '+Y(p.y).toFixed(1)+' ';
+      started=true; last=i;
+    });
+    var area=d+'L'+X(last).toFixed(1)+' '+(m.t+ih)+' L'+X(0).toFixed(1)+' '+(m.t+ih)+' Z';
+    var g=el('linearGradient',{id:'gMN',x1:0,y1:0,x2:0,y2:1});
+    g.appendChild(el('stop',{offset:'0%','stop-color':cssv('--primary'),'stop-opacity':'.28'}));
+    g.appendChild(el('stop',{offset:'100%','stop-color':cssv('--primary'),'stop-opacity':'0'}));
+    var defs=el('defs'); defs.appendChild(g); svg.appendChild(defs);
+    svg.appendChild(el('path',{d:area,fill:'url(#gMN)'}));
+    svg.appendChild(el('path',{d:d,fill:'none',stroke:cssv('--primary'),'stroke-width':'2.5','stroke-linecap':'round','stroke-linejoin':'round'}));
+    MONTH_NOV.points.forEach(function(p,i){
+      var lb=el('text',{x:X(i),y:H-12,'text-anchor':'middle'}); lb.textContent=p.x; svg.appendChild(lb);
+      if(p.y===null) return;
+      svg.appendChild(el('circle',{cx:X(i),cy:Y(p.y),r:5,fill:cssv('--surface'),stroke:cssv('--primary'),'stroke-width':'2.5'}));
+      var v=el('text',{x:X(i),y:Y(p.y)-13,'text-anchor':'middle',fill:cssv('--text'),'font-size':'13','font-weight':'600'});
+      v.textContent=p.y; svg.appendChild(v);
+    });
+    host.appendChild(svg);
+  }
+  var WEEKS_NOV=[{k:'02–08.11',v:10,note:'неделя 1'},{k:'09–15.11',v:5,note:'неделя 2'},{k:'16–22.11',v:10,note:'неделя 3'}];
+  function drawWeeksNov(){
+    var host=$('#wk-stats-nov'); if(!host) return;
+    host.innerHTML='';
+    var max=70;
+    WEEKS_NOV.forEach(function(w,i){
+      var row=document.createElement('div'); row.className='stat';
+      var l=document.createElement('div');
+      var k=document.createElement('div'); k.className='stat-k'; k.textContent=w.k+' · '+w.note;
+      var tr=document.createElement('div'); tr.className='bar-track';
+      var fl=document.createElement('div'); fl.className='bar-fill'; fl.style.width='0%';
+      tr.appendChild(fl); l.appendChild(k); l.appendChild(tr);
+      var v=document.createElement('div'); v.className='stat-v'; v.textContent=w.v+' ЦЛ · '+Math.round(w.v/max*100)+'% месячного плана';
+      row.appendChild(l); row.appendChild(v); host.appendChild(row);
+      var target=(w.v/max*100);
+      if (reduce) fl.style.width=target+'%';
+      else requestAnimationFrame(function(){ setTimeout(function(){ fl.style.width=target+'%'; }, 90*i); });
+    });
+    var tot=document.createElement('div'); tot.className='stat';
+    var tl=document.createElement('div'); var tk=document.createElement('div'); tk.className='stat-k'; tk.textContent='Накоплено за месяц (22 дня)';
+    tl.appendChild(tk);
+    var tr2=document.createElement('div'); tr2.className='bar-track';
+    var fl2=document.createElement('div'); fl2.className='bar-fill'; fl2.style.width='36%'; tr2.appendChild(fl2); tl.appendChild(tr2);
+    var tv=document.createElement('div'); tv.className='stat-v'; tv.textContent='25 ЦЛ · 36%';
+    tot.appendChild(tl); tot.appendChild(tv); host.appendChild(tot);
+  }
+
   /* week-over-week / month-over-month: small multiples (у каждой метрики своя шкала) */
   var WEEK_TABLE = null;                       /* недельная таблица сравнения, снимается при старте */
   var CMP = {
@@ -1262,7 +1386,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
   }
   function updCmp(p){
     var m=(p==='m10'||p==='pall'), c=m?CMP.m:CMP.w;
-    var sec=$('#wow'); if(sec) sec.style.display=(p==='p6'||p==='p7'||p==='p8'||m)?'':'none';
+    var sec=$('#wow'); if(sec) sec.style.display=(p==='p8'||m)?'':'none';
     setTxt('wow-title',c.title); setTxt('wow-sub',c.sub);
     setTxt('wow-panel-t',c.pt); setTxt('wow-panel-s',c.ps);
     setTxt('wow-panel-s2',m?'Предыдущий месяц — из месячного отчёта. Октябрь — окно выгрузки 01.10–01.11, сентябрь — 01.09–30.09':'Предыдущая неделя — из отчёта 09–15.11. Оба периода — Директ API и CRM, сверка 23.11');
@@ -1391,7 +1515,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     kpiAnim = true;
   }
 
-  function drawAll(){ drawKpis(); drawRing(); drawMonth(); drawWeeks(); drawTrendViz(); drawCorridor(); drawCmp((current==='m10'||current==='pall')?CMP.m:CMP.w); drawSrc(); drawMtx(); drawProj(); }
+  function drawAll(){ drawKpis(); drawRing(); drawMonth(); drawWeeks(); drawMonthNov(); drawWeeksNov(); drawTrendViz(); drawCorridor(); drawCmp((current==='m10'||current==='pall')?CMP.m:CMP.w); drawSrc(); drawMtx(); drawProj(); }
 
   /* ---------- тренд ЦЛ по неделям (3 линии: всего / Директ / SEO) ---------- */
   /* Источник: недельные отчёты 17.08–01.11 на Desktop\Отчеты\Секвойя + таблицы «Источники трафика · Целевые» (17–23.08: Д 12 / SEO 3 / Реферальный 1; 24–30.08: Д 8 / SEO 3; 31.08–06.09: Д 6 / SEO 6; w4 28.09–04.10: Д 5 / SEO 5 / Прямой 1 / Email 1) */
@@ -1402,9 +1526,9 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     {k:'w5',d:'14–20.09',t:10,di:5,se:1,extra:' · Прямой 2 · Email 1 · Реферал 1'},
     {k:'w6',d:'21–27.09',t:15,di:7,se:6,extra:' · Прямой 2'},
     {k:'w7',d:'28.09–04.10',t:12,di:5,se:5,extra:' · Прямой 1 · Email 1'},
-    {k:'w8',d:'05–11.10',t:13,di:11,se:2,extra:''},
-    {k:'w9',d:'12–18.10',t:14,di:5,se:6,extra:' · Email 3'},
-    {k:'w10',d:'19–25.10',t:12,di:5,se:4,extra:' · Email 3'},
+    {k:'w8',d:'05–11.10',t:16,di:15,se:1,extra:''},
+    {k:'w9',d:'12–18.10',t:13,di:7,se:4,extra:' · Email 2'},
+    {k:'w10',d:'19–25.10',t:13,di:6,se:3,extra:' · Email 4'},
     {k:'w11',d:'26.10–01.11',t:14,di:7,se:5,extra:' · Email 2'},
     {k:'w12',d:'02–08.11',t:10,di:5,se:2,extra:' · Email 3'},
     {k:'w13',d:'09–15.11',t:5,di:1,se:1,extra:' · Email 3'},
@@ -1968,14 +2092,14 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     p1:{tab:'w',ix:'w7',h1:'28 сентября – 04 октября 2026',dates:'28.09 – 04.10',lbl:'28.09–04.10',leads:12,spend:63000,cpl:5250,conv:null,prev:'sep3',chip:'ЦЛ 12',
       note:'Неделя закрыта отчётом 28.09–04.10: 12 ЦЛ, из них 7 в октябре. Бюджет недели 63 000 ₽, CPL 5 250 ₽.',
       text:'28.09 04.10 сентябрь октябрь w4'},
-    p2:{tab:'w',ix:'w8',h1:'05 – 11 октября 2026',dates:'05.10 – 11.10',lbl:'05–11.10',leads:13,spend:89000,cpl:6846,conv:null,prev:'p1',chip:'ЦЛ 13',
-      note:'13 ЦЛ, 89 000 ₽, CPL 6 846 ₽; Директ 11 / SEO 2.',
+    p2:{tab:'w',ix:'w8',h1:'05 – 11 октября 2026',dates:'05.10 – 11.10',lbl:'05–11.10',leads:16,spend:89000,cpl:5563,conv:null,prev:'p1',chip:'ЦЛ 16',
+      note:'16 ЦЛ, 89 000 ₽, CPL 5 563 ₽; Директ 15 / SEO 1. В недельном отчёте на 11.10 было 13 — разница из-за переатрибуции сделок в CRM 23.11.',
       text:'05.10 11.10 октябрь w5'},
-    p3:{tab:'w',ix:'w9',h1:'12 – 18 октября 2026',dates:'12.10 – 18.10',lbl:'12–18.10',leads:14,spend:76194,cpl:5442,conv:3.31,prev:'p2',chip:'ЦЛ 14',
-      note:'14 ЦЛ, 76 194 ₽, CPL 5 442 ₽; Директ 5 / SEO 6 / Email 3.',
+    p3:{tab:'w',ix:'w9',h1:'12 – 18 октября 2026',dates:'12.10 – 18.10',lbl:'12–18.10',leads:13,spend:76194,cpl:5861,conv:3.07,prev:'p2',chip:'ЦЛ 13',
+      note:'13 ЦЛ, 76 194 ₽, CPL 5 861 ₽; Директ 7 / SEO 4 / Email 2. В недельном отчёте было 14 — база CRM от 23.11.',
       text:'12.10 18.10 октябрь w6'},
-    p4:{tab:'w',ix:'w10',h1:'19 – 25 октября 2026',dates:'19.10 – 25.10',lbl:'19–25.10',leads:12,spend:96124,cpl:8010,conv:2.63,prev:'p3',chip:'ЦЛ 12',
-      note:'12 ЦЛ, 96 124 ₽, CPL 8 010 ₽; Директ 5 / SEO 4 / Email 3. Расход пересчитан повторной выгрузкой 02.11 (было 98 159 ₽).',
+    p4:{tab:'w',ix:'w10',h1:'19 – 25 октября 2026',dates:'19.10 – 25.10',lbl:'19–25.10',leads:13,spend:96124,cpl:7394,conv:2.85,prev:'p3',chip:'ЦЛ 13',
+      note:'13 ЦЛ, 96 124 ₽, CPL 7 394 ₽; Директ 6 / SEO 3 / Email 4. Расход пересчитан повторной выгрузкой 02.11 (было 98 159 ₽); лиды — база CRM 23.11.',
       text:'19.10 25.10 октябрь w7'},
     p5:{tab:'w',ix:'w11',h1:'26 октября – 1 ноября 2026',dates:'26.10 – 01.11',lbl:'26.10–01.11',leads:14,spend:87738,cpl:6267,conv:3.12,allleads:247,prev:'p4',chip:'ЦЛ 14',
       note:'14 ЦЛ, 87 738 ₽, CPL 6 267 ₽; Директ 7 / SEO 5 / Email 2. Лидов всего — 247.',
@@ -1986,8 +2110,8 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     p7:{tab:'w',ix:'w13',h1:'9 – 15 ноября 2026',dates:'09.11 – 15.11',lbl:'09–15.11',leads:5,spend:53877,cpl:10775,conv:6.17,allleads:173,prev:'p6',chip:'ЦЛ 5',
       note:'5 ЦЛ, 53 877 ₽, CPL 10 775 ₽; Директ 1 / SEO 1 / Email 3. Лидов всего — 173. Дни без открутки: 10.11 и 15.11; 14.11 — 20 показов и 1 864 ₽.',
       text:'09.11 15.11 ноябрь w13'},
-    nov:{tab:'m',ix:'нояб',h1:'Ноябрь 2026 (MTD)',dates:'01.11 – 22.11',lbl:'ноябрь',leads:25,spend:170013,cpl:6801,conv:1.95,clicks:1282,impr:361986,prev:'m10',chip:'ЦЛ 25',
-      note:'Ноябрь MTD 01–22.11: 25 целевых (CRM, тег «Целевой»), 170 013 ₽ и 1 282 клика Директа, CPL 6 801 ₽, конверсия 1,95%. План месяца — 70 ЦЛ, контрольная точка 15.11 — 34.',
+    nov:{tab:'m',ix:'нояб',h1:'Ноябрь 2026 (MTD)',dates:'01.11 – 22.11',lbl:'ноябрь',leads:25,spend:170012,cpl:6800,conv:1.95,clicks:1282,impr:361986,prev:'m10',chip:'ЦЛ 25',
+      note:'Ноябрь MTD 01–22.11: 25 целевых (CRM, тег «Целевой»), 170 012 ₽ и 1 282 клика Директа, CPL 6 800 ₽, конверсия 1,95%. План месяца — 70 ЦЛ; чек-поинты медиаплана: 08.11 — 18, 15.11 — 34, 22.11 — 52 (выполнение 48%).',
       text:'ноябрь 2026 MTD 01.11 22.11'},
     p8:{tab:'w',ix:'w14',h1:'16 – 22 ноября 2026',dates:'16.11 – 22.11',lbl:'16–22.11',leads:10,spend:67790,cpl:6779,conv:8.93,allleads:243,prev:'p7',chip:'ЦЛ 10',
        note:'10 ЦЛ, 67 790 ₽, CPL 6 779 ₽; Директ 4 / SEO 5 / Email 1. Лидов всего — 243. В выгрузке Директа последний день — 21.11: 22.11 не откручивался. Период этого отчёта — значения по умолчанию.',
@@ -2094,7 +2218,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     m10:SPLIT_MONTH, pall:SPLIT_MONTH
   };
   function updSplit(pid){
-    var s=SPLIT[pid]||SPLIT.p6;
+    var s=SPLIT[pid]; if(!s) return;
     function T(i,v){ var e=document.getElementById(i); if(e) e.textContent=v; }
     function B(id,v){ var e=document.getElementById(id); if(!e) return; e.setAttribute('data-w',String(v)); e.style.width=v+'%'; }
     function P1(id,v){ var f=parseFloat(String(v).replace(',','.')); return isNaN(f)?0:f; }
@@ -2164,7 +2288,8 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     applySep(pid==='m09');
   }
 
-  var OCT_SET={p1:1,p2:1,p3:1,p4:1,p5:1,p6:1,p7:1,p8:1,pall:1,m10:1};
+  var OCT_SET={p1:1,p2:1,p3:1,p4:1,p5:1,pall:1,m10:1};
+  var NOV_SET={p6:1,p7:1,p8:1,nov:1};
   function setPeriod(p){
     current=p; var d=P[p], pd=d.prev?P[d.prev]:null;
     var isMonth = d.tab==='m';
@@ -2175,9 +2300,19 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     setTxt('brandDates','Отчёт '+d.lbl);
     setTxt('footPeriod','Отчёт по рекламной кампании · '+(isMonth? d.lbl+' 2026' : d.lbl+'.2026'));
     setTxt('navwow',isMonth?'Месяц к месяцу':'Неделя к неделе');
-    var rb=$('#ringBox'); if(rb) rb.style.display='flex';
-    var ms=$('#month'); if(ms) ms.style.display=OCT_SET[p]?'':'none';
-    var nm=$('#navmonth'); if(nm) nm.style.display=OCT_SET[p]?'':'none';
+    var mk = NOV_SET[p] ? 'nov' : (OCT_SET[p] ? 'oct' : null);
+    var rb=$('#ringBox'); if(rb) rb.style.display=(mk==='nov')?'flex':'none';
+    var ms=$('#month'); if(ms) ms.style.display=mk?'':'none';
+    var mo=$('#month-oct'), mn=$('#month-nov');
+    if(mo) mo.style.display=(mk==='oct')?'':'none';
+    if(mn) mn.style.display=(mk==='nov')?'':'none';
+    var nm=$('#navmonth'); if(nm){ nm.style.display=mk?'':'none'; nm.textContent=(mk==='nov')?'Ноябрь':'Октябрь'; }
+    if(mk==='nov') requestAnimationFrame(function(){ drawMonthNov(); drawWeeksNov(); });
+    var detail=(p==='p8'||p==='m10'||p==='pall');
+    ['wow','src','proj','leads'].forEach(function(id){ var e=document.getElementById(id); if(e) e.style.display=detail?'':'none'; });
+    var seo=$('#seo'); if(seo) seo.style.display=(p==='p8')?'':'none';
+    var nd=$('#nodetail'); if(nd) nd.style.display=detail?'none':'';
+    var nmw=$('#navwow'); if(nmw) nmw.style.display=detail?'':'none';
     var tl=$('#t-leads'); if(tl) tl.textContent=fmtInt(d.leads);
     var tsp=$('#t-spend'); if(tsp) tsp.textContent=fmtRub(d.spend);
     var tc=$('#t-cpl'); if(tc) tc.textContent=fmtRub(d.cpl);
