@@ -6,7 +6,7 @@
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="yandex" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-23T15:52Z"><meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="build" content="2026-11-23T16:28Z"><meta http-equiv="cache-control" content="no-cache">
 <title>Отчёт 16 – 22 ноября 2026 — интерактивная версия</title>
 <meta name="color-scheme" content="light">
 <style>
@@ -671,7 +671,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
         <span class="tag">CPL <b id="t-cpl">6 779 ₽</b></span>
         <span class="tag" id="sliceHint" hidden>Разрезы ниже — фиксированно за <b>16.11–22.11</b></span>
         <span class="tag">Сформировано <b>23.11.2026</b></span>
-        <span class="tag">Сборка <b id="buildStamp">23.11 15:52</b></span>
+        <span class="tag">Сборка <b id="buildStamp">23.11 19:28</b></span>
       </div>
     </div>
     <div class="ring-box" id="ringBox" style="display:none">
@@ -848,7 +848,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
   <section id="nodetail" style="display:none">
     <div class="panel">
       <div class="panel-t">Детализация есть не для каждого периода</div>
-      <p class="sub" style="margin:8px 0 0">Не для всякого периода в выгрузках есть полный набор данных. Список сделок и разрезы «источники / расход по проектам» собраны для недели <b>16–22.11.2026</b> и для октября (<b>01.10–31.10</b>, окно выгрузки 01.10–01.11). Для недель <b>02–08.11</b> и <b>09–15.11</b> в отчёте есть KPI, каналы, проекты и таблица «неделя к неделе» — расход и трафик Директа плюс целевые из CRM; полного списка сделок и разреза по проектам за эти две недели нет, поэтому блоки «Источники» и «Проекты» не показываются. Сравнение с предыдущей неделей для них считается по выгрузкам кабинетов (26.10–01.11 и 02–08.11).</p>
+      <p class="sub" style="margin:8px 0 0">Разрезы «источники», «проекты», «SEO» и «лиды» в этой сборке собраны для недели <b>16–22.11.2026</b> и для октября (<b>01.10–31.10</b>). Для выбранного периода таких выгрузок нет — показаны только KPI, тренд по неделям и месячная динамика. Выберите 16–22.11.2026, октябрь или ноябрь MTD.</p>
     </div>
   </section>
 
@@ -1098,7 +1098,7 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
 
   <footer>
     <span id="footPeriod">Отчёт по рекламной кампании · 16–22.11.2026</span>
-    <span>Сформировано 23.11.2026 · интерактивная версия · сборка <b id="buildStamp2">23.11 15:52</b> UTC</span>
+    <span>Сформировано 23.11.2026 · интерактивная версия · сборка <b id="buildStamp2">23.11 19:28</b> UTC</span>
     <span id="baseCompare">База сравнения: 09–15.11 (5 ЦЛ, 53 877 ₽)</span>
   </footer>
 </div>
@@ -2277,26 +2277,32 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
   };
   function setTxt(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
   function setHtml(id,v){ var e=document.getElementById(id); if(e) e.innerHTML=v; }
+  var DS2={
+    p6:{src:{"base":10,"max":5,"aria":"Источники целевых: Директ 5, SEO 2, Email 3","rows":[{"k":"Директ","v":5,"c":"--primary","d":"9,7 тыс. ₽ на ЦЛ"},{"k":"SEO / Органика","v":2,"c":"--ch-src"},{"k":"Email","v":3,"c":"--ch-mail"}]},mtx:[{"p":"Sequoia","c":["--seq","Sequoia"],"cls":"seq","direct":4,"seo":2,"email":0},{"p":"Ruqi","c":["--ruq","Ruqi"],"cls":"ruq","direct":1,"seo":0,"email":0},{"p":"Solution PRO","c":["--spr","Solution PRO"],"cls":"spr","direct":0,"seo":0,"email":3}],proj:[{"k":"Sequoia","v":7194,"b":"43 166 ₽ / 6 ЦЛ","c":"--seq","cls":"seq"},{"k":"Ruqi","v":5179,"b":"5 179 ₽ / 1 ЦЛ","c":"--ruq","cls":"ruq"},{"k":"Solution PRO","v":null,"b":"бюджета нет / 3 ЦЛ","c":"--spr","cls":"spr"}],cfg:{"unit":"₽","max":8000},rows:"<tr><td><span class=\"pill p-seq\">Sequoia</span></td><td class=\"d\">151 819</td><td class=\"d\">832</td><td class=\"d\">43 166 ₽</td><td class=\"d\">6</td><td class=\"d\">7 194 ₽</td></tr><tr><td><span class=\"pill p-ruq\">Ruqi</span></td><td class=\"d\">390</td><td class=\"d\">14</td><td class=\"d\">5 179 ₽</td><td class=\"d\">1</td><td class=\"d\">5 179 ₽</td></tr><tr><td><span class=\"pill p-spr\">Solution PRO</span></td><td class=\"d\" title=\"Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет\">—</td><td class=\"d\" title=\"Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct — показов и кликов в выгрузке нет\">—</td><td class=\"d\" title=\"Платного трафика нет: заявки приходят из писем и органики\"><span style=\"font-family:var(--mono);font-size:11.5px;color:var(--text-3)\">вне Direct</span></td><td class=\"d\">3</td><td class=\"d\" title=\"CPL не считается: бюджета нет\">—</td></tr><tr style=\"background:var(--surface-2);font-weight:600\"><td>Итого</td><td class=\"d\">152 209</td><td class=\"d\">846</td><td class=\"d\">48 345 ₽</td><td class=\"d\">10</td><td class=\"d\">4 835 ₽</td></tr>",leads:[{"d":"06.11","ts":"2026-11-06","name":"Заявка с почты – gazprombank.ru","contact":"gazprombank.ru","raw":"gazprombank.ru","meta":"письмо на почту · gazprombank.ru · мгновенная потребность","src":"Email","proj":"spr","projName":"Solution PRO","stage":"Закрыто и не реализовано"},{"d":"05.11","ts":"2026-11-05","name":"AryaHome (ООО «БИРИЗ ТЕКСТИЛЬ»)","contact":"форма sequoia-service.ru","raw":"sequoia-service.ru","meta":"sequoia-service.ru · Директ · старт 6 чел. · грузчик, комплектовщик","src":"Директ","proj":"seq","projName":"Секвойя","stage":"КП выставлено"},{"d":"05.11","ts":"2026-11-05","name":"Рэмос (ООО «РЭМОСАЛЬЯНС»)","contact":"+7 (495) 796-20-70","raw":"+74957962070","meta":"входящий звонок · колл-центр · sequoia-service.ru · дубль: письмо на почту","src":"SEO","proj":"seq","projName":"Секвойя","stage":"КП выставлено"},{"d":"04.11","ts":"2026-11-04","name":"Авангард, Патриот","contact":"форма sequoia-service.ru","raw":"sequoia-service.ru","meta":"sequoia-service.ru · обращение с сайта · форма без utm-меток","src":"Директ","proj":"seq","projName":"Секвойя","stage":"Закрыто и не реализовано"},{"d":"03.11","ts":"2026-11-03","name":"Тендер МТС","contact":"mvmor013@mtsretail.ru","raw":"mvmor013@mtsretail.ru","meta":"письмо на почту · mtsretail.ru · сайт сделки s-pro.group","src":"Email","proj":"spr","projName":"Solution PRO","stage":"Взял в работу"},{"d":"03.11","ts":"2026-11-03","name":"Заявка с сайта sequoia-service.ru – Zvonok","contact":"форма sequoia-service.ru","raw":"sequoia-service.ru","meta":"sequoia-service.ru · Calltouch · utm_campaign=703157688 (РСЯ)","src":"Директ","proj":"seq","projName":"Секвойя","stage":"Закрыто и не реализовано"},{"d":"03.11","ts":"2026-11-03","name":"Заявка с сайта sequoia-service.ru – Попок","contact":"форма sequoia-service.ru","raw":"sequoia-service.ru","meta":"sequoia-service.ru · форма без utm-меток","src":"Директ","proj":"seq","projName":"Секвойя","stage":"Закрыто и не реализовано"},{"d":"02.11","ts":"2026-11-02","name":"Новотранс (ПАО «Новотранс»)","contact":"колл-центр","raw":"—","meta":"входящий звонок · колл-центр · старт 11 чел. · грузчик","src":"SEO","proj":"seq","projName":"Секвойя","stage":"КП выставлено"},{"d":"02.11","ts":"2026-11-02","name":"Традиции Вкуса (ООО «Традиции вкуса»)","contact":"форма ruqi.ru","raw":"ruqi.ru","meta":"ruqi-pro.ru · eLama · «Аренда персонала. Поиск. Москва и МО»","src":"Директ","proj":"ruq","projName":"Руки","stage":"Закрыто и не реализовано"},{"d":"02.11","ts":"2026-11-02","name":"ООО «ФУДМАРКЕТ ЦЕНТР»","contact":"почта","raw":"—","meta":"письмо на почту · местный (подработка)","src":"Email","proj":"spr","projName":"Solution PRO","stage":"Потребности выявлены"}],txt:{"srcCap":"10 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу","srcCall":"<b>Директ дал 5 из 10 целевых</b> при бюджете 48,3 тыс. ₽. Расходы на один целевой лид Директа — около <b class=\"mono\">9,7 тыс. ₽</b> (48 345 / 5). Общая цена целевого лида всех каналов — 4 835 ₽.","projCap":"43 166 ₽ на Секвойю (6 ЦЛ) · 5 179 ₽ на Руки (1 ЦЛ) · Solution PRO — 3 целевых без рекламного бюджета","projSub":"Показы и клики — из выгрузки Яндекс.Директ API за 02.11–08.11","projCall":"<b>Solution PRO — 3 целевых при нулевом бюджете.</b> Три письма (МТС, Газпромбанк, Фудмаркет): домен не входит в отслеживаемые аккаунты Direct, поэтому расхода и CPL по нему нет.","projFoot":"","leadsSub":"10 сделок с тегом «Целевой», созданных 02.11–08.11. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 09.11.2026.","leadsCap":"Целевые лиды за 2 – 8 ноября 2026","periodNote":"Сделки, созданные 02.11–08.11.2026 · этап — текущий статус в CRM на 09.11.2026, а не результат периода; факт недели — количество, каналы и бюджет"}},
+    p7:{src:{"base":5,"max":3,"aria":"Источники целевых: Директ 1, SEO 1, Email 3","rows":[{"k":"Директ","v":1,"c":"--primary","d":"53,9 тыс. ₽ на ЦЛ"},{"k":"SEO / Органика","v":1,"c":"--ch-src"},{"k":"Email","v":3,"c":"--ch-mail"}]},mtx:[{"p":"Sequoia","c":["--seq","Sequoia"],"cls":"seq","direct":1,"seo":1,"email":2},{"p":"Ruqi","c":["--ruq","Ruqi"],"cls":"ruq","direct":0,"seo":0,"email":0},{"p":"Solution PRO","c":["--spr","Solution PRO"],"cls":"spr","direct":0,"seo":0,"email":1}],proj:[{"k":"Sequoia","v":50734,"b":"50 734 ₽ / 4 ЦЛ","c":"--seq","cls":"seq"},{"k":"Ruqi","v":3144,"b":"3 144 ₽ / 0 ЦЛ","c":"--ruq","cls":"ruq"},{"k":"Solution PRO","v":null,"b":"бюджета нет / 1 ЦЛ","c":"--spr","cls":"spr"}],cfg:{"unit":"₽","max":60000},rows:"<tr><td><span class=\"pill p-seq\">Sequoia</span></td><td class=\"d\">182 459</td><td class=\"d\">313</td><td class=\"d\">50 734 ₽</td><td class=\"d\">4</td><td class=\"d\">12 684 ₽</td></tr><tr><td><span class=\"pill p-ruq\">Ruqi</span></td><td class=\"d\">321</td><td class=\"d\">11</td><td class=\"d\">3 144 ₽</td><td class=\"d\">0</td><td class=\"d\" title=\"Целевых нет — CPL не считается\">—</td></tr><tr><td><span class=\"pill p-spr\">Solution PRO</span></td><td class=\"d\" title=\"Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct\">—</td><td class=\"d\" title=\"Домен s-pro.group не подключён к отслеживаемым аккаунтам Direct\">—</td><td class=\"d\" title=\"Платного трафика нет: заявки приходят из писем и органики\"><span style=\"font-family:var(--mono);font-size:11.5px;color:var(--text-3)\">вне Direct</span></td><td class=\"d\">1</td><td class=\"d\" title=\"CPL не считается: бюджета нет\">—</td></tr><tr style=\"background:var(--surface-2);font-weight:600\"><td>Итого</td><td class=\"d\">182 780</td><td class=\"d\">324</td><td class=\"d\">53 877 ₽</td><td class=\"d\">5</td><td class=\"d\">10 775 ₽</td></tr>",leads:[{"d":"13.11","ts":"2026-11-13","name":"Заявка с почты – russianpost.ru","contact":"anna.grigorkina@russianpost.ru","raw":"anna.grigorkina@russianpost.ru","meta":"письмо · russianpost.ru · «уже работаем с клиентом» · проект Секвойя (решение владельца 16.11)","src":"Email","proj":"seq","projName":"Секвойя","stage":"Закрыто и не реализовано"},{"d":"11.11","ts":"2026-11-11","name":"Почта России","contact":"почта","raw":"s-pro.group","meta":"письмо · «Запрос ценовой информации от АО «Почта России»» · сайт заявки s-pro.group · вахта, Marketplace","src":"Email","proj":"spr","projName":"Solution PRO","stage":"Потребности выявлены"},{"d":"10.11","ts":"2026-11-10","name":"ООО Дистрибьюторская компания МИКС","contact":"форма lidmagnit","raw":"sequoia-service.ru","meta":"форма · кампания «cold» · utm_medium=3 · ИНН 7709252314 · вахта, комплектовщик, старт 5 чел.","src":"Директ","proj":"seq","projName":"Секвойя","stage":"КП выставлено","sum":1452000},{"d":"10.11","ts":"2026-11-10","name":"ООО Глобал транс","contact":"+7 (495) 150-51-51","raw":"+74951505151","meta":"входящий звонок · Колл-центр · сайт не определён · проект Секвойя (решение владельца 16.11)","src":"SEO","proj":"seq","projName":"Секвойя","stage":"Контакт с ЛПР установлен"},{"d":"09.11","ts":"2026-11-09","name":"ООО БЕРГ ХОЛДИНГ","contact":"почта","raw":"—","meta":"письмо · «Запрос коммерческого предложения» · ИНН 7723709698 · вахта, комплектовщик, старт 20 чел.","src":"Email","proj":"seq","projName":"Секвойя","stage":"КП выставлено","sum":5119400}],txt:{"srcCap":"5 целевых · SEO включает звонки и чат; заявки с форм без utm-меток отнесены к Директу","srcCall":"<b>Директ дал 1 из 5 целевых</b> при бюджете 53,9 тыс. ₽. Расходы на один целевой лид Директа — <b class=\"mono\">53,9 тыс. ₽</b> (53 877 / 1). Общая цена целевого лида всех каналов — 10 775 ₽.","projCap":"50 734 ₽ на Секвойю (4 ЦЛ) · 3 144 ₽ на Руки (0 ЦЛ) · Solution PRO — 1 целевая без рекламного бюджета","projSub":"Показы и клики — из выгрузки Яндекс.Директ API за 09.11–15.11","projCall":"<b>Solution PRO — 1 целевая при нулевом бюджете.</b> Письмо на s-pro.group (Почта России): домен не входит в отслеживаемые аккаунты Direct, поэтому расхода и CPL по нему нет. У «Руки» неделя без целевых: 11 кликов и 3 144 ₽ ушли вхолостую.","projFoot":"","leadsSub":"5 сделок с тегом «Целевой», созданных 09.11–15.11. Номер, почта или ИНН кликается — копируется. Статусы этапов — на 16.11.2026.","leadsCap":"Целевые лиды за 9 – 15 ноября 2026","periodNote":"Сделки, созданные 09.11–15.11.2026 · этап — текущий статус в CRM на 16.11.2026, а не результат периода; факт недели — количество, каналы и бюджет"}}
+  };
   function updSrcProj(pid){
-    var m=(pid==='m10'||pid==='pall'), t=m?TXT.month:TXT.week;
-    SRC=m?SRC_M:SRC_W; MTX=m?MTX_M:MTX_W; PROJ=m?PROJ_M:PROJ_W; PROJ_CFG=m?PROJ_CFG_M:PROJ_CFG_W;
+    var m=(pid==='m10'||pid==='pall'), ds=DS2[pid], t=ds?ds.txt:(m?TXT.month:TXT.week);
+    if(ds){ SRC=ds.src; MTX=ds.mtx; PROJ=ds.proj; PROJ_CFG=ds.cfg; }
+    else { SRC=m?SRC_M:SRC_W; MTX=m?MTX_M:MTX_W; PROJ=m?PROJ_M:PROJ_W; PROJ_CFG=m?PROJ_CFG_M:PROJ_CFG_W; }
     setTxt('proj-ttl',m?'Расход и цена целевого лида по проектам':'Расход и цена целевого лида');
     setTxt('src-cap',t.srcCap); setHtml('src-callout',t.srcCall);
     setTxt('proj-cap',t.projCap); setTxt('proj-sub',t.projSub); setHtml('proj-callout',t.projCall);
     var pf=document.getElementById('proj-foot'); if(pf){ pf.textContent=t.projFoot||''; pf.style.display=t.projFoot?'':'none'; }
-    var tb=document.getElementById('proj-tb'); if(tb) tb.innerHTML=m?PROJ_ROWS.month:PROJ_ROWS.week;
+    var tb=document.getElementById('proj-tb'); if(tb) tb.innerHTML=ds?ds.rows:(m?PROJ_ROWS.month:PROJ_ROWS.week);
     drawSrc(); drawMtx(); drawProj();
   }
   function setLeads(pid){
-    var m=(pid==='m10'||pid==='pall'), t=m?TXT.month:TXT.week;
-    LEADS=(pid==='m09')?[]:(m?LEADS_M:LEADS_W);
+    var m=(pid==='m10'||pid==='pall'), ds=DS2[pid], sp=SPLIT[pid], t=ds?ds.txt:(m?TXT.month:TXT.week);
+    LEADS=(pid==='m09')?[]:(ds?ds.leads:(m?LEADS_M:LEADS_W));
     state.proj='all'; state.src='all'; state.q=''; if(qi) qi.value='';
     $$('.chip[data-proj],.chip[data-src]').forEach(function(o){
       var isAll=(o.dataset.proj==='all'||o.dataset.src==='all');
       o.setAttribute('aria-pressed', isAll?'true':'false');
     });
-    var C={seq:(m?35:8),ruq:(m?16:1),spr:(m?12:1),x:0,dir:(m?38:4),seo:(m?16:5),mail:(m?9:1)};
-    setTxt('cnt-all',LEADS.length); setTxt('cnt-seq',C.seq); setTxt('cnt-ruq',C.ruq); setTxt('cnt-spr',C.spr); setTxt('cnt-x',C.x);
+    var C=ds?{seq:+sp.seq[0],ruq:+sp.ruq[0],spr:+sp.spr[0],x:0,dir:sp.dir,seo:sp.seo,mail:sp.mail}
+        :{seq:(m?35:8),ruq:(m?16:1),spr:(m?12:1),x:0,dir:(m?38:4),seo:(m?16:5),mail:(m?9:1)};
+    setTxt('cnt-all', ds?((P[pid]&&P[pid].allleads)||LEADS.length) : LEADS.length); setTxt('cnt-seq',C.seq); setTxt('cnt-ruq',C.ruq); setTxt('cnt-spr',C.spr); setTxt('cnt-x',C.x);
     setTxt('cnt-dir',C.dir); setTxt('cnt-seo',C.seo); setTxt('cnt-mail',C.mail);
     var x=document.getElementById('chip-x'); if(x){ x.hidden=!(C.x>0); x.style.display=C.x>0?'':'none'; }
     setTxt('leads-sub',t.leadsSub); setTxt('leads-period',t.periodNote);
@@ -2326,10 +2332,17 @@ html.js-reveal .reveal.in{opacity:1;transform:none;transition:opacity .7s var(--
     var nm=$('#navmonth'); if(nm){ nm.style.display=mk?'':'none'; nm.textContent=(mk==='nov')?'Ноябрь':'Октябрь'; }
     if(mk==='nov') requestAnimationFrame(function(){ drawMonthNov(); drawWeeksNov(); });
     var detail=(p==='p8'||p==='m10'||p==='pall');
-    ['wow','src','proj','leads'].forEach(function(id){ var e=document.getElementById(id); if(e) e.style.display=detail?'':'none'; });
+    var hasFull=detail||!!DS2[p];
+    var hasCmp=detail||p==='p6'||p==='p7';
+    ['src','proj','leads'].forEach(function(id){ var e=document.getElementById(id); if(e) e.style.display=hasFull?'':'none'; });
     var seo=$('#seo'); if(seo) seo.style.display=(p==='p8')?'':'none';
-    var nd=$('#nodetail'); if(nd) nd.style.display=detail?'none':'';
-    var nmw=$('#navwow'); if(nmw) nmw.style.display=detail?'':'none';
+    /* «Деньги: подписано» — суммы договоров только по сентябрю и октябрю */
+    var mn2=document.getElementById('money'); if(mn2) mn2.style.display=(p==='m10'||p==='pall'||p==='p8')?'':'none';
+    /* навигация показывает только те разделы, которые есть у периода */
+    var navFor=function(id,on){ var a=document.querySelector('#navlinks a[href="#'+id+'"]'); if(a) a.style.display=on?'':'none'; };
+    navFor('src',hasFull); navFor('proj',hasFull); navFor('seo',p==='p8'); navFor('leads',hasFull); navFor('wow',hasCmp);
+    /* заглушка только там, где разрезов действительно нет (август–сентябрь и недели октября до 26.10) */
+    var nd=$('#nodetail'); if(nd) nd.style.display=SPLIT[p]?'none':'';
     var tl=$('#t-leads'); if(tl) tl.textContent=fmtInt(d.leads);
     var tsp=$('#t-spend'); if(tsp) tsp.textContent=fmtRub(d.spend);
     var tc=$('#t-cpl'); if(tc) tc.textContent=fmtRub(d.cpl);
